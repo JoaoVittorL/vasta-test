@@ -14,104 +14,11 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
 
-
-
     <link rel="canonical" href="{{ canonical_url }}">
-
+    {{ 'global.css' | asset_url | stylesheet_tag }}
     <title>{{ page_title }}</title>
 
     {{ content_for_header }}
-
-    <style>
-       :root {
-          --bg-footer: #17171A;
-          --text-main: #fff;
-          --text-muted: #ccc;
-          --highlight: #E8E8E8;
-          --success: #28a745;
-          --success-hover: #218838;
-          --background-content-card: #F5F5FA;
-          --black: #252525;
-          --yellow-review: #FFB800;
-          --button-green: #00AC4F;
-          --white:#fff;
-          --light-gray: #F6F5F5;
-          --gray-dark:#4B4B4B;
-          --background-black: #17171A;
-       }
-
-      .container-content {
-         max-width: 1170px;
-         width: 100%;
-         margin-inline: auto;
-         padding-block:84px;
-      }
-
-       *{
-         box-sizing: border-box;
-         padding: 0px;
-         margin: 0px;
-         font-family: sans-serif;
-         font-size: 16px;
-         font-family: 'DM Sans', sans-serif;
-       }
-
-       h3 {
-        font-weight: 700;
-        font-size: 36px;
-        line-height: 120%;
-        text-align: center;
-        color:#000;
-      }
-
-      h2{
-        font-weight: 700;
-        font-size: 45px;
-        line-height: 40px;
-        color: var(--white);
-      }
-
-      h4{
-        font-weight:500;
-        font-size:20px;
-        line-height:100%;
-        color: var(--white);
-      }
-
-      html {
-        scroll-behavior: smooth;
-        box-sizing: border-box;
-        font-size: 62.5%);
-      }
-
-      @media (max-width: 768px) {
-        h3 {
-          font-size: 28px;
-        }
-
-        h2{
-          font-size: 34px;
-        }
-
-        h4{
-         font-size:20px; 
-        }
-      }
-
-      @media (max-width: 375px) {
-        h3 {
-          font-size: 24px;
-        }
-
-        h2{
-          font-size: 28px;
-        }
-
-        h4{
-          font-size:14px;
-        }
-      }
-    </style>
   </head>
 
   <body>

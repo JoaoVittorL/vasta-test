@@ -1,0 +1,66 @@
+{% schema %}
+  {
+    "name": "Produtos mais vendidos",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título da seção",
+        "default": "Produtos Mais Vendidos"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Produto",
+        "settings": [
+          {
+            "type": "text",
+            "id": "product_name",
+            "label": "Nome do produto"
+          }, {
+            "type": "range",
+            "id": "rating",
+            "label": "Avaliação (1 a 5 estrelas)",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "default": 5
+          }, {
+            "type": "text",
+            "id": "review_count",
+            "label": "Quantidade de avaliações",
+            "default": "0"
+          }, {
+            "type": "image_picker",
+            "id": "product_image",
+            "label": "Imagem do produto"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 10,
+    "presets": [
+      {
+        "name": "Lista de produtos mais vendidos",
+        "category": "Produtos"
+      }
+    ]
+  }
+{% endschema %}
+
+{{ 'section-selling-products.css' | asset_url | stylesheet_tag }}
+
+<div class="container-content">
+  <h3>{{ section.settings.title }}</h3>
+  <div class="list-selling-products">
+    {% for block in section.blocks %}
+      {% render 'products-card'
+        , product_image: block.settings.product_image
+        , product: block.settings.product
+        , rating: block.settings.rating
+        , quantity_reviews: block.settings.quantity_reviews
+      %}
+    {% endfor %}
+  </div>
+</div>

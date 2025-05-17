@@ -1,0 +1,85 @@
+{{ 'section-advantages.css' | asset_url | stylesheet_tag }}
+{% schema %}
+  {
+    "name": "Atrativos da empresa",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título da seção de motivos para comprar conosco",
+        "default": "Shop Smarter, Shop With Vasta"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_image_1",
+        "label": "Primeiro motivo"
+      },
+      {
+        "type": "textarea",
+        "id": "description_1",
+        "label": "Descrição da imagem 1",
+        "default": "Lorem ipsum dolor sit"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_image_2",
+        "label": "Segundo motivo"
+      },
+      {
+        "type": "textarea",
+        "id": "description_2",
+        "label": "Descrição da imagem 2",
+        "default": "Lorem ipsum dolor sit"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_image_3",
+        "label": "Terceiro motivo"
+      },
+      {
+        "type": "textarea",
+        "id": "description_3",
+        "label": "Descrição da imagem 3",
+        "default": "Lorem ipsum dolor sit"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_image_4",
+        "label": "Quarto"
+      },
+      {
+        "type": "textarea",
+        "id": "description_4",
+        "label": "Descrição da imagem 4",
+        "default": "Lorem ipsum dolor sit"
+      }
+    ]
+  }
+{% endschema %}
+
+<div class="invite-container" id="about">
+  <h3 class="invite-title">{{ section.settings.title }}</h3>
+
+  <div class="invite-list">
+    {% for i in (1..4) %}
+      {% assign banner_image = 'banner_image_' | append: i %}
+      {% assign description = 'description_' | append: i %}
+
+      <div class="invite-card-content">
+        {% if section.settings[banner_image] %}
+          <img
+            src="{{ section.settings[banner_image] | image_url: width: 400 }}"
+            alt="Image {{ i }}"
+            height="74"
+            width="74">
+        {% endif %}
+
+        {% if section.settings[description] != blank %}
+          <div class="invite-card-description">
+            {{ section.settings[description] }}
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

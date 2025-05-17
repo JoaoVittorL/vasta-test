@@ -1,0 +1,100 @@
+{{ 'section-favorite-product.css' | asset_url | stylesheet_tag }}
+{% schema %}
+  {
+    "name": "Produto favorito",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "banner_image_1",
+        "label": "Banner Image 1"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "title",
+        "default": "Cherished Favorites"
+      },
+      {
+        "type": "text",
+        "id": "comment",
+        "label": "comment",
+        "default": "Explore the harmony of exceptional Quality and Customer Praise"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "View More"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product-feedback-favorite",
+        "name": "product-feedback-favorite",
+        "settings": [
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Nome"
+          },
+          {
+            "type": "range",
+            "id": "rating",
+            "label": "Avaliação",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "default": 5
+          },
+          {
+            "type": "text",
+            "id": "comment",
+            "label": "Comentário",
+            "default": "Escreva o comentario"
+          },
+          {
+            "type": "image_picker",
+            "id": "person_image",
+            "label": "Imagem da pessoa"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 2,
+    "presets": [
+      {
+        "name": "product-feedback-favorite",
+        "category": "product-feedback-favorite"
+      }
+    ]
+  }
+{% endschema %}
+
+
+<div class="container-favorite-feedbacks" id="favorite">
+  <div class="content-favorite-feedbacks">
+    <div class="content-title">
+      <h2 class="title-favorite-feedbacks">{{ section.settings.title }}</h2>
+      <p class="comment-favorite-feedbacks">{{ section.settings.comment }}</p>
+
+      <a href="{{ section.settings.button_link }}" class="hero-banner__button">
+        {{ section.settings.button_text }}
+      </a>
+    </div>
+    <div class="content-feedback">
+      {% for block in section.blocks %}
+        {% render 'feedback-card'
+          , name: block.settings.name
+          , comment: block.settings.comment
+          , rating: block.settings.rating
+          , image: block.settings.person_image
+        %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

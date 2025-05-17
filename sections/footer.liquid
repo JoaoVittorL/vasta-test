@@ -1,3 +1,5 @@
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+
 {% schema %}
   {
     "name": "Rodapé com imagens",
@@ -6,17 +8,20 @@
         "type": "image_picker",
         "id": "imagem_banner",
         "label": "Imagem do banner"
-      }, {
+      },
+      {
         "type": "text",
         "id": "email",
         "label": "E-mail para contato",
         "default": "info@brand.com"
-      }, {
+      },
+      {
         "type": "text",
         "id": "phone",
         "label": "Telefone para contato",
         "default": "+1 (111) 222-3333"
-      }, {
+      },
+      {
         "type": "text",
         "id": "address",
         "label": "Endereço",
@@ -34,7 +39,8 @@
             "label": "Imagem do cartão"
           }
         ]
-      }, {
+      },
+      {
         "type": "card-product-2",
         "name": "Cartão do produto",
         "settings": [
@@ -55,332 +61,6 @@
   }
 {% endschema %}
 
-<style>
-  .footer {
-    background: var(--bg-footer);
-    color: var(--text-main);
-  }
-
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
-    max-width: 1170px;
-    margin: auto;
-    padding-block: 65px;
-  }
-
-  .footer-logo img {
-    max-width: 160px;
-    height: auto;
-  }
-
-  .email-coupon-container {
-    max-width: 555px;
-    width: 100%;
-    margin-block: 34px;
-  }
-
-  .email-coupon-label {
-    font-size: 20px;
-    font-weight: 400;
-  }
-
-  .email-coupon-form {
-    display: flex;
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    background-color: #1a1a1a;
-    overflow: hidden;
-    margin-top: 12px;
-  }
-
-  .email-input {
-    flex: 1;
-    padding: 0.75rem 1rem;
-    background-color: #1a1a1a;
-    color: white;
-    border: none;
-    font-size: 16px;
-  }
-
-  .email-input:focus {
-    outline: none;
-  }
-
-  .coupon-button {
-    border: 1px solid white;
-    background-color: var(--success);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 20px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .coupon-button:hover {
-    background-color: var(--success-hover);
-  }
-
-  .content-images {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-block: 20px;
-  }
-
-  .content-images img {
-    width: 110px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  .footer-contact {
-    display: flex;
-    gap: 10px;
-    margin-top: 11px;
-  }
-
-  .footer-content-item a {
-    color: var(--highlight);
-    font-size: 16px;
-    text-decoration: none;
-  }
-
-  .footer-columns {
-    display: flex;
-    gap: 3rem;
-    margin-bottom: 40px;
-  }
-
-  .footer-column span {
-    display: block;
-    font-weight: 400;
-    font-size: 1.1rem;
-  }
-
-  .footer-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 25px 0 0;
-  }
-
-  .footer-column ul li {
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    cursor: pointer;
-  }
-
-  .footer-column ul li:hover {
-    color: var(--text-main);
-  }
-
-  .footer-cards-content {
-    text-align: center;
-  }
-
-  .footer-cards-content img {
-    height: 44px;
-    width: 70px;
-    object-fit: contain;
-  }
-
-  .footer-cards-content span {
-    display: block;
-    margin-top: 10px;
-  }
-
-  .footer-right-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .toggle-arrow {
-    display: none;
-  }
-
-  .footer-column ul {
-    display: block;
-    gap: 10px;
-  }
-
-  .footer-column ul li {
-    font-size: 16px;
-    font-weight: 400;
-    color: #d9d9d9;
-  }
-
-  .toggle-arrow i {
-    color: white;
-    font-size: 1rem;
-    transition: transform 0.3s ease;
-  }
-
-  .footer-column.open .toggle-arrow i {
-    transform: rotate(180deg);
-  }
-
-  .copyright {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 110%;
-  }
-
-  @media (max-width: 768px) {
-    .footer {
-      padding: 46px 104px;
-    }
-
-    .toggle-arrow {
-      display: inline-block;
-      background: none;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-left: 8px;
-      color: #fff;
-    }
-
-    .footer-right-content {
-      margin-inline: auto;
-    }
-
-    .footer-logo img {
-      max-width: 200px;
-      height: 38px;
-      display: block;
-      margin-inline: auto;
-    }
-
-    .footer-content {
-      padding-inline: 0;
-      padding-block: 0;
-    }
-
-    .footer-column ul {
-      display: none;
-      padding-left: 16px;
-    }
-
-    .footer-column.open ul {
-      display: block;
-    }
-
-    .footer-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-    }
-
-    .content-images {
-      gap: 16px;
-    }
-
-    .content-images img {
-      width: 76px;
-      height: 114px;
-    }
-
-    .footer-content {
-      padding-inline: 100px;
-      padding-block: 46px;
-    }
-
-    .contact-title-footer {
-      text-align: center;
-    }
-
-    .footer-contact {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .footer-title-contact {
-      margin-inline: auto;
-      text-align: center;
-    }
-
-    .footer-column span {
-      font-size: 20px;
-    }
-  }
-
-  @media (max-width: 375px) {
-    .footer {
-      padding: 40px 20px;
-    }
-
-    .content-images {
-      gap: 6px;
-    }
-
-    .footer-logo img {
-      max-width: 140px;
-      height: 30px;
-      display: block;
-      margin-inline: auto;
-    }
-
-    .content-images img {
-      width: 72px;
-      height: 114px;
-    }
-
-    .email-coupon-label {
-      font-size: 13px;
-      line-height: 20px;
-      text-align: center;
-    }
-
-    .footer-content {
-      padding-inline: 0;
-      padding-block: 0;
-    }
-
-    .email-input {
-      padding-block: 8px;
-      padding-inline: 14px;
-      font-size: 12px;
-    }
-
-    .coupon-button {
-      padding-block: 8px;
-      padding-inline: 16px;
-      font-size: 12px;
-    }
-
-    .footer-columns {
-      justify-content: center;
-    }
-
-    .footer-column span {
-      font-size: 14px;
-    }
-
-    .footer-column ul li {
-      font-size: 12px;
-      font-weight: 400;
-      color: #d9d9d9;
-    }
-
-    .copyright {
-      font-size: 12px;
-    }
-
-    .footer-cards-content img {
-      height: 35px;
-      width: 60px;
-      object-fit: contain;
-    }
-  }
-</style>
 
 <div class="footer" id="footer">
   <div class="footer-content">
@@ -401,7 +81,6 @@
         </div>
       </div>
 
-      <!-- Imagens de produtos -->
       <div>
         <h4 class="contact-title-footer">Popular Collections</h4>
         <div class="content-images">
@@ -415,7 +94,6 @@
         </div>
       </div>
 
-      <!-- Contatos -->
       <h4 class="footer-title-contact">Get In Contact</h4>
       <div class="footer-contact">
         <div class="footer-content-item">

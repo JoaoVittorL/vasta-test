@@ -1,37 +1,42 @@
+{{ 'section-suggestions.css' | asset_url | stylesheet_tag }}
+
 {% schema %}
   {
-    "name": "Produtos mais vendidos",
+    "name": "Sugestões para compra",
     "settings": [
       {
         "type": "text",
         "id": "title",
-        "label": "Título da seção",
-        "default": "Produtos Mais Vendidos"
+        "label": "Título da seção de produtos mais vendidos",
+        "default": "Best Selling Products"
       }
     ],
     "blocks": [
       {
-        "type": "product",
-        "name": "Produto",
+        "type": "product-suggestions",
+        "name": "product-suggestions",
         "settings": [
           {
             "type": "text",
-            "id": "product_name",
-            "label": "Nome do produto"
-          }, {
+            "id": "product",
+            "label": "Produto"
+          },
+          {
             "type": "range",
             "id": "rating",
-            "label": "Avaliação (1 a 5 estrelas)",
+            "label": "Avaliação",
             "min": 1,
             "max": 5,
             "step": 1,
             "default": 5
-          }, {
+          },
+          {
             "type": "text",
-            "id": "review_count",
-            "label": "Quantidade de avaliações",
+            "id": "quantity_reviews",
+            "label": "Quantidade de visualizações",
             "default": "0"
-          }, {
+          },
+          {
             "type": "image_picker",
             "id": "product_image",
             "label": "Imagem do produto"
@@ -42,19 +47,17 @@
     "max_blocks": 10,
     "presets": [
       {
-        "name": "Lista de produtos mais vendidos",
-        "category": "Produtos"
+        "name": "product-suggestions",
+        "category": "product-suggestions"
       }
     ]
   }
 {% endschema %}
 
-{{ 'section-selling-products.css' | asset_url | stylesheet_tag }}
-
 
 <div class="container-content">
   <h3>{{ section.settings.title }}</h3>
-  <div class="list-selling-products">
+  <div class="list-suggestions-products">
     {% for block in section.blocks %}
       {% render 'products-card'
         , product_image: block.settings.product_image

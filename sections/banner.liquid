@@ -1,0 +1,81 @@
+{{ 'section-banner.css' | asset_url | stylesheet_tag }}
+{% schema %}
+  {
+    "name": "Banner principal",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título principal",
+        "default": "Lorem ipsum dolor sit amet consectetur"
+      },
+      {
+        "type": "text",
+        "id": "sub_title",
+        "label": "Subtítulo",
+        "default": "COM MAIS DE 1600 AVALIAÇÕES 5 ESTRELAS"
+      },
+      {
+        "type": "text",
+        "id": "comment",
+        "label": "Descrição",
+        "default": "Lorem ipsum dolor sit amet consectetur. Elit elementum rhoncus"
+      },
+      {
+        "type": "range",
+        "id": "stars",
+        "label": "Classificação em estrelas",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "default": 5
+      }, {
+        "type": "image_picker",
+        "id": "banner_image",
+        "label": "Imagem do banner"
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Texto do botão",
+        "default": "Ver mais"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Link do botão"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner principal com botão",
+        "category": "Seções principais"
+      }
+    ]
+  }
+{% endschema %}
+
+<div class="hero-banner">
+  <div class="hero-banner__container">
+    <div class="hero-banner__content">
+      <div class="hero-banner__subtitle">
+        <span>{{ section.settings.sub_title }}</span>
+        {% render 'stars-rating'
+          , rating: section.settings.stars %}
+      </div>
+      <h2 class="hero-banner__title">{{ section.settings.title }}</h2>
+      <p class="hero-banner__description">{{ section.settings.comment }}</p>
+
+      <a href="{{ section.settings.button_link }}" class="hero-banner__button">
+        {{ section.settings.button_text }}
+      </a>
+    </div>
+
+    <div class="hero-banner__image-wrapper">
+      <div class="hero-banner__image-glow"></div>
+      {%- if section.settings.banner_image -%}
+        {{
+          section.settings.banner_image | image_url: width: 1000 | image_tag: class: 'hero-banner__image', loading: 'lazy', width: 1000, height: 1000, alt: section.settings.banner_image.alt
+        }}
+      {%- endif -%}
+    </div>
+  </div>
+</div>

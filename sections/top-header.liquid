@@ -1,0 +1,58 @@
+{{ 'section-top-header.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+  {
+    "name": "Barra superior de contato",
+    "settings": [
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "E-mail de contato",
+        "default": "info@brand.com"
+      },
+      {
+        "type": "text",
+        "id": "center_message",
+        "label": "Mensagem central",
+        "default": "FRETE GRÁTIS EM PEDIDOS ACIMA DE R$X"
+      },
+      {
+        "type": "text",
+        "id": "contact_phone",
+        "label": "Telefone de contato",
+        "default": "+55 (11) 99999-9999"
+      }
+    ]
+  }
+{% endschema %}
+
+
+<div class="header-container" aria-label="Contact information">
+  <div class="header-content">
+
+    <div class="header-content-item">
+      <i class="fas fa-envelope" aria-hidden="true"></i>
+      <a
+        href="mailto:{{ section.settings.contact_email }}"
+        class="contact-text"
+        style="color: inherit; text-decoration: none;">
+        {{ section.settings.contact_email }}
+      </a>
+    </div>
+
+    <div class="header-content-item">
+      {{ section.settings.center_message }}
+    </div>
+
+    <div class="header-content-item">
+      <i class="fas fa-phone-alt" aria-hidden="true"></i>
+      <a
+        href="tel:{{ section.settings.contact_phone | remove: ' ' | remove: '(' | remove: ')' | remove: '-' }}"
+        class="contact-text"
+        style="color: inherit; text-decoration: none;">
+        {{ section.settings.contact_phone }}
+      </a>
+    </div>
+
+  </div>
+</div>

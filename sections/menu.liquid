@@ -1,0 +1,69 @@
+{{ 'section-menu.css' | asset_url | stylesheet_tag }}
+
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "imagem_banner",
+        "label": "Imagem do banner"
+      }
+    ]
+  }
+{% endschema %}
+
+<div class="search-header-container">
+  <button class="search-header-hamburger" aria-label="Abrir menu">
+    <i class="fas fa-bars" aria-hidden="true"></i>
+  </button>
+
+  {% if section.settings.imagem_banner %}
+    <img
+      class="  "
+      src="{{ section.settings.imagem_banner | image_url: width: 1200 }}"
+      alt="Logo da loja">
+  {% endif %}
+
+  <div class="search-bar-desktop-search">
+    <div class="email-coupon-form-search">
+      <input
+        type="email"
+        placeholder="Search: Lorem Ipsum"
+        class="email-input-search">
+      <button class="coupon-button-search">
+        Search
+        <i
+          class="fas fa-search"
+          aria-hidden="true"
+          style="margin-left: 5px;"></i>
+
+      </button>
+    </div>
+  </div>
+
+  <a
+    href="/cart"
+    class="search-header-cart"
+    aria-label="Ver carrinho">
+    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+    <span class="cart-count">{{ cart.item_count }}</span>
+  </a>
+</div>
+
+<div class="search-bar-mobile-search">
+  <div class="email-coupon-form-search">
+    <input
+      type="email"
+      placeholder="Search: Lorem Ipsum"
+      class="email-input-search">
+    <button class="coupon-button-search">
+      Search
+      <i
+        class="fas fa-search"
+        aria-hidden="true"
+        style="margin-left: 5px;"></i>
+    </button>
+  </div>
+</div>

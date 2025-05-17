@@ -1,0 +1,144 @@
+.search-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.75rem;
+}
+
+.search-header-hamburger {
+  background: none;
+  border: none;
+  display: none;
+  color: var(--black);
+}
+
+.search-header-logo {
+  width: 140px;
+  height: auto;
+}
+
+.search-bar-desktop-search {
+  display: block;
+  max-width: 555px;
+  width: 100%;
+}
+
+.search-bar-mobile-search {
+  display: none;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.search-bar-desktop-search img,
+.search-bar-mobile-search img {
+  height: 40px;
+  width: auto;
+}
+
+.search-header-cart {
+  position: relative;
+  color: var(--black);
+  text-decoration: none;
+  font-size: 8px;
+}
+
+.search-header-cart .cart-count {
+  position: absolute;
+  top: -14px;
+  right: -8px;
+  background-color: var(--button-green);
+  color: var(--white);
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.email-coupon-container-search {
+  max-width: 555px;
+  margin-block: 34px;
+}
+
+.email-coupon-label-search {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.email-coupon-form-search {
+  display: flex;
+  border: 1px solid var(--black);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.email-input-search {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  font-size: 16px;
+}
+
+.email-input-search:focus {
+  outline: none;
+}
+
+.coupon-button-search {
+  border: none;
+  border-left: 1px solid var(--black);
+  background-color: none;
+  color: var(--black);
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+@media (max-width: 768px) {
+  .search-header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .fa-bars,
+  .fa-shopping-cart {
+    font-size: 24px;
+  }
+  .search-header-hamburger {
+    display: block !important;
+  }
+
+  .search-header-logo {
+    order: 2;
+    margin: 0 auto;
+    width: 120px;
+    height: auto;
+  }
+
+  .search-bar-desktop-search {
+    display: none;
+  }
+
+  .search-bar-mobile-search {
+    display: block;
+    padding-inline: 20px;
+  }
+
+  .search-header-cart {
+    order: 3;
+  }
+}
+
+@media (max-width: 375px) {
+  .fa-bars,
+  .fa-shopping-cart {
+    font-size: 16px;
+  }
+
+  .search-header-logo {
+    width: 90px;
+    height: auto;
+  }
+}
