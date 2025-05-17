@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "sections": {
@@ -12,7 +21,7 @@
       "section-search-products": {
         "type": "section-search-products",
         "settings": {
-          "imagem_banner": "shopify:\/\/shop_images\/Logo_Dark.png"
+          "imagem_banner": "shopify://shop_images/Logo_Dark.png"
         }
       },
       "section-list-navigation": {
@@ -28,7 +37,7 @@
           "sub_title": "WITH 1600+ 5-STAR REVIEWS",
           "comment": "Lorem ipsum dolor sit amet consectetur. Elit elementum rhoncus",
           "stars": 5,
-          "banner_image": "shopify:\/\/shop_images\/182859bc187ff2b37af41466493aa4fe51b56ddd.png",
+          "banner_image": "shopify://shop_images/182859bc187ff2b37af41466493aa4fe51b56ddd.png",
           "button_text": "View More",
           "button_link": ""
         }
@@ -46,7 +55,7 @@
       "section-favorite-product": {
         "type": "section-favorite-product",
         "settings": {
-          "banner_image_1": "shopify:\/\/shop_images\/9f1c223547d70f6569373dfac9da30aa8515f842_1.png",
+          "banner_image_1": "shopify://shop_images/9f1c223547d70f6569373dfac9da30aa8515f842_1.png",
           "title": "Cherished Favorites",
           "comment": "Explore the harmony of exceptional Quality and Customer Praise",
           "button_text": "View More",
@@ -82,54 +91,54 @@
           "address": "Informe o endereço"
         }
       },
-      "section-carousel": {
-        "type": "section-carousel",
+      "carousel": {
+        "type": "carousel",
         "blocks": {
-          "product_tdAd9c": {
+          "product_HWxbR3": {
             "type": "product",
             "settings": {
-              "product": "loren-ipsum",
-              "title": "Lorem Ipsum"
+              "product": "person-1",
+              "title": ""
             }
           },
-          "product_Eg7BQF": {
+          "product_zy7teD": {
             "type": "product",
             "settings": {
-              "product": "pessoa-2",
-              "title": "Lorem Ipsum"
+              "product": "",
+              "title": ""
             }
           },
-          "product_iBbkd6": {
+          "product_7mhg6f": {
             "type": "product",
             "settings": {
-              "product": "pessoa-3",
-              "title": "Lorem Ipsum"
+              "product": "",
+              "title": ""
             }
           },
-          "product_4HHXcA": {
+          "product_xj3edq": {
             "type": "product",
             "settings": {
-              "product": "pessoa-4",
-              "title": "Lorem Ipsum"
+              "product": "",
+              "title": ""
             }
           },
-          "product_tUTQh6": {
+          "product_iKWxJL": {
             "type": "product",
             "settings": {
-              "product": "pessoa-5",
-              "title": "Lorem Ipsum"
+              "product": "",
+              "title": ""
             }
           }
         },
         "block_order": [
-          "product_tdAd9c",
-          "product_Eg7BQF",
-          "product_iBbkd6",
-          "product_4HHXcA",
-          "product_tUTQh6"
+          "product_HWxbR3",
+          "product_zy7teD",
+          "product_7mhg6f",
+          "product_xj3edq",
+          "product_iKWxJL"
         ],
         "settings": {
-          "number_slider_desktop": 5
+          "number_slider_desktop": 1
         }
       }
     },
