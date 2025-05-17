@@ -10,87 +10,6 @@
 {
   "current": {
     "sections": {
-      "section-header": {
-        "type": "section-header",
-        "settings": {
-          "contact_email": "info@brand.com",
-          "center_message": "WE PAY SHIPPING ON ORDERS OVER $X",
-          "contact_phone": "+1 (111) 222-3333"
-        }
-      },
-      "section-search-products": {
-        "type": "section-search-products",
-        "settings": {
-          "imagem_banner": "shopify://shop_images/Logo_Dark.png"
-        }
-      },
-      "section-list-navigation": {
-        "type": "section-list-navigation",
-        "settings": {
-          "custom_nav_menu": "main-menu"
-        }
-      },
-      "section-banner": {
-        "type": "section-banner",
-        "settings": {
-          "title": "Lorem ipsum dolor sit amet consectetur",
-          "sub_title": "WITH 1600+ 5-STAR REVIEWS",
-          "comment": "Lorem ipsum dolor sit amet consectetur. Elit elementum rhoncus",
-          "stars": 5,
-          "banner_image": "shopify://shop_images/182859bc187ff2b37af41466493aa4fe51b56ddd.png",
-          "button_text": "View More",
-          "button_link": ""
-        }
-      },
-      "section-invite-to-buy": {
-        "type": "section-invite-to-buy",
-        "settings": {
-          "title": "Shop Smarter, Shop With Vasta",
-          "description_1": "Lorem ipsum dolor sit amet consectetur",
-          "description_2": "Lorem ipsum dolor sit amet consectetur",
-          "description_3": "Lorem ipsum dolor sit amet consectetur",
-          "description_4": "Lorem ipsum dolor sit amet consectetur"
-        }
-      },
-      "section-favorite-product": {
-        "type": "section-favorite-product",
-        "settings": {
-          "banner_image_1": "shopify://shop_images/9f1c223547d70f6569373dfac9da30aa8515f842_1.png",
-          "title": "Cherished Favorites",
-          "comment": "Explore the harmony of exceptional Quality and Customer Praise",
-          "button_text": "View More",
-          "button_link": ""
-        }
-      },
-      "section-selling-products": {
-        "type": "section-selling-products",
-        "settings": {
-          "title": "Best Selling Products"
-        }
-      },
-      "section-reviews": {
-        "type": "section-reviews",
-        "settings": {
-          "title": "Real Reviews, Real Experiences",
-          "subtitle": "With 1600+ 5-star reviews",
-          "rating": 0,
-          "products_per_page": 4
-        }
-      },
-      "section-sugestion-of-buy": {
-        "type": "section-sugestion-of-buy",
-        "settings": {
-          "title": "Best Selling Products"
-        }
-      },
-      "section-footer": {
-        "type": "section-footer",
-        "settings": {
-          "email": "info@brand.com",
-          "phone": "+1 (111) 222-3333",
-          "address": "Informe o endereço"
-        }
-      },
       "carousel": {
         "type": "carousel",
         "blocks": {
@@ -138,7 +57,84 @@
           "product_iKWxJL"
         ],
         "settings": {
-          "number_slider_desktop": 1
+          "number_slider_desktop": 5
+        }
+      },
+      "top-header": {
+        "type": "top-header",
+        "settings": {
+          "contact_email": "info@brand.com",
+          "center_message": "FRETE GRÁTIS EM PEDIDOS ACIMA DE R$X",
+          "contact_phone": "+55 (11) 99999-9999"
+        }
+      },
+      "menu": {
+        "type": "menu",
+        "settings": {}
+      },
+      "navigation": {
+        "type": "navigation",
+        "settings": {
+          "custom_nav_menu": "main-menu"
+        }
+      },
+      "banner": {
+        "type": "banner",
+        "settings": {
+          "title": "Lorem ipsum dolor sit amet consectetur",
+          "sub_title": "COM MAIS DE 1600 AVALIAÇÕES 5 ESTRELAS",
+          "comment": "Lorem ipsum dolor sit amet consectetur. Elit elementum rhoncus",
+          "stars": 5,
+          "button_text": "Ver mais",
+          "button_link": ""
+        }
+      },
+      "advantages": {
+        "type": "advantages",
+        "settings": {
+          "title": "Shop Smarter, Shop With Vasta",
+          "description_1": "Lorem ipsum dolor sit",
+          "description_2": "Lorem ipsum dolor sit",
+          "description_3": "Lorem ipsum dolor sit",
+          "description_4": "Lorem ipsum dolor sit"
+        }
+      },
+      "favorite-product": {
+        "type": "favorite-product",
+        "settings": {
+          "title": "Cherished Favorites",
+          "comment": "Explore the harmony of exceptional Quality and Customer Praise",
+          "button_text": "View More",
+          "button_link": ""
+        }
+      },
+      "popular-products": {
+        "type": "popular-products",
+        "settings": {
+          "title": "Produtos Mais Vendidos"
+        }
+      },
+      "reviews": {
+        "type": "reviews",
+        "settings": {
+          "title": "Real Reviews, Real Experiences",
+          "subtitle": "With 1600+ 5-star reviews",
+          "rating": 0,
+          "products_per_page": 4
+        }
+      },
+      "suggestions": {
+        "type": "suggestions",
+        "settings": {
+          "title": "Best Selling Products"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "email": "info@brand.com",
+          "phone": "+1 (111) 222-3333",
+          "address": "Informe o endereço"
         }
       }
     },
