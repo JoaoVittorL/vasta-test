@@ -1,0 +1,126 @@
+{% assign featured_collection = collections['all-products'] %}
+
+{% schema %}
+{
+  "name": "Feedbacks dos usuários",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título da seção de reviews",
+      "default": "Real Reviews, Real Experiences"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle da seção de reviews",
+      "default": "With 1600+ 5-star reviews"
+    },
+    {
+      "type": "number",
+      "id": "rating",
+      "label": "Rating atual",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 4,
+      "max": 48,
+      "step": 4,
+      "default": 4,
+      "label": "Products per page"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews dinâmicos",
+      "category": "Testimonials"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .container-review {
+    max-width: 1170px;
+    width: 100%;
+    margin-inline: auto;
+    gap: 1rem;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .subtitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .subtitle span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+  }
+
+  .list-review {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 768px) {
+    .list-review {
+      gap:10px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .subtitle span {
+      font-size: 14px;
+    }
+    .container-review{
+      padding:10px;
+    }
+  }
+</style>
+
+<div class="container-review" id="product-reviews">
+  <h3>{{ section.settings.title }}</h3>
+  
+  <div class="subtitle">
+    <span>{{ section.settings.subtitle }}</span>
+    {% render 'stars-rating', rating: section.settings.rating %}
+  </div>
+  
+    {% if featured_collection and featured_collection.products_count > 0 %}
+      {% paginate featured_collection.products by section.settings.products_per_page %}
+        <div class="list-review">
+          {% for product in featured_collection.products %}
+            {% render 'reviews-card',
+              title: product.title,
+              state: 'United State',
+              description: product.description,
+              rating: 5,
+              image: product.featured_image, 
+              product_image: product.featured_image, 
+              product: product
+            %}
+            {% endfor %}
+        </div>
+
+        {% if paginate.pages > 1 %}
+          <div style="margin-top:30px;" class="pagination-container">
+            {% render 'pagination', paginate: paginate, anchor: '#product-reviews' %}
+          </div>
+        {% endif %}
+      {% endpaginate %}
+    {% else %}
+      <p>Coleção 'all-products' não encontrada ou está vazia.</p>
+    {% endif %}
+</div>
+
+

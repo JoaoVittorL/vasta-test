@@ -1,0 +1,95 @@
+{% schema %}
+{
+  "name": "Produtos mais vendidos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título da seção de produtos mais vendidos",
+      "default": "Best Selling Products"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product-sellling",
+      "name": "product-sellling",
+      "settings": [
+        {
+          "type": "text",
+          "id": "product",
+          "label": "Produto"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Avaliação",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "quantity_reviews",
+          "label": "Quantidade de visualizações",
+          "default": "0"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Imagem do produto"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "product-sellling",
+      "category": "product-sellling"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+   .list-selling-products{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:26px;
+    margin-top:35px;
+  }
+
+   @media (max-width: 768px) {
+    .list-selling-products{
+       flex-wrap:wrap;
+     }
+    }
+
+    @media (max-width: 375px) {
+     .subtitle span{
+       font-size:14px;
+     }
+
+     .list-selling-products {
+       gap:16px;
+     }
+
+      
+  }
+</style>
+
+<div class="container-content">
+  <h3>{{ section.settings.title }}</h3>
+  <div class="list-selling-products">
+    {% for block in section.blocks %}
+      {% render 'products-card',
+        product_image: block.settings.product_image,
+        product: block.settings.product,
+        rating: block.settings.rating,
+        quantity_reviews: block.settings.quantity_reviews
+      %}
+    {% endfor %}
+  </div>
+</div>

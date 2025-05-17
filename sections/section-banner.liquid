@@ -1,0 +1,306 @@
+{% schema %}
+{
+  "name": "Banner principal",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "Lorem ipsum dolor sit amet consectetur"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Subtitle",
+      "default": "WITH 1600+ 5-STAR REVIEWS"
+    },
+    {
+      "type": "text",
+      "id": "comment",
+      "label": "Description",
+      "default": "Lorem ipsum dolor sit amet consectetur. Elit elementum rhoncus"
+    },
+    {
+      "type": "range",
+      "id": "stars",
+      "label": "Star Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner",
+      "category": "Hero Sections"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .hero-banner {
+    position: relative;
+    background: linear-gradient(90deg, var(--bg-footer) 60%, #052F5F 122%);
+    padding: 0 1rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: 506px;
+    max-height: 506px;
+  }
+
+  .hero-banner__container {
+    max-width: 1270px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 3rem 0 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-banner__content {
+    flex: 0 1 40%;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    padding-bottom: 4rem;
+  }
+
+  .hero-banner__subtitle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 0.625rem;
+  }
+
+  .hero-banner__stars {
+    display: inline-flex;
+    color: var(--yellow-review);
+  }
+
+  .hero-banner__title {
+    font-weight: 700;
+    font-size: 2.8125rem;
+    line-height: 1.2;
+    margin-bottom: 0.625rem;
+    color: #fff;
+  }
+
+  .hero-banner__description {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: var(--white);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-banner__button {
+    display: inline-block;
+    background-color: var(--button-green);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 109px;
+    font-size: 1.25rem;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 0.625rem;
+    font-weight: 500;
+    width: 170px;
+    text-align: center;
+  }
+
+  .hero-banner__button:hover {
+    background-color: var(--success-hover);
+    transform: translateY(-2px);
+  }
+
+  .hero-banner__image-wrapper {
+    flex: 0 1 55%;
+    text-align: right;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .hero-banner__image-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(80px);
+  }
+
+  .hero-banner__image {
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    transform: scale(1.1);
+    transition: transform 0.8s ease;
+    display: block;
+  }
+
+  .hero-banner__image:hover {
+    transform: scale(1.15);
+  }
+
+  /* === TABLET e MOBILE === */
+  @media screen and (max-width: 768px) {
+    .hero-banner {
+      min-height: auto;
+      max-height: none;
+    }
+
+    .hero-banner__container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+      padding: 0;
+    }
+
+    .hero-banner__content {
+      flex: 1 1 auto;
+      padding-bottom: 0;
+      margin-top:42px;
+      align-items: center;
+    }
+
+    .hero-banner__subtitle span {
+      font-size: 18px;
+    }
+
+    .hero-banner__title {
+      font-size: 36px;
+    }
+
+    .hero-banner__description {
+      font-size: 22px;
+      line-height: 30px;
+      letter-spacing: 3%;
+    }
+
+    .hero-banner__button {
+      /* margin-top: 16px; */
+      font-size: 18px;
+      padding: 16px 36px;
+      width: auto;
+    }
+
+    .hero-banner__image-wrapper {
+      flex: 1 1 auto;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 1rem 0;
+    }
+
+    .hero-banner__image {
+      width: 120%;
+      max-width: none;
+      height: auto;
+      transform: scale(1.2);
+    }
+
+    .hero-banner__image:hover {
+      transform: scale(1.2);
+    }
+
+    .hero-banner__image-glow {
+      filter: blur(50px);
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    .hero-banner__image {
+      width: 150%;
+      transform: scale(1.3);
+    }
+
+    .hero-banner__image:hover {
+      transform: scale(1.3);
+    }
+
+    .hero-banner__subtitle span {
+      font-size:14px;
+    }
+
+    .hero-banner__title{
+      font-size:28px;
+      line-height:36px;
+    }
+
+    .hero-banner__button{
+      margin-top: 0px !important;
+    }
+    .hero-banner__description{
+      font-size:14px;
+      line-height:20px;
+    }
+  }
+</style>
+
+<div class="hero-banner">
+  <div class="hero-banner__container">
+    <div class="hero-banner__content">
+      <div class="hero-banner__subtitle">
+        <span>{{ section.settings.sub_title }}</span>
+        {% render 'stars-rating', rating: section.settings.stars %}
+      </div>
+      <h2 class="hero-banner__title">{{ section.settings.title }}</h2>
+      <p class="hero-banner__description">{{ section.settings.comment }}</p>
+
+      <a href="{{ section.settings.button_link }}" class="hero-banner__button">
+        {{ section.settings.button_text }}
+      </a>
+    </div>
+
+    <div class="hero-banner__image-wrapper">
+      <div class="hero-banner__image-glow"></div>
+      {%- if section.settings.banner_image -%}
+        {{
+          section.settings.banner_image
+          | image_url: width: 1000
+          | image_tag:
+            class: 'hero-banner__image',
+            loading: 'lazy',
+            width: 1000,
+            height: 1000,
+            alt: section.settings.banner_image.alt
+        }}
+      {%- endif -%}
+    </div>
+  </div>
+</div>

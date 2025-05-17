@@ -1,0 +1,192 @@
+<style>
+  :root {
+    --pagination-color: #333;
+    --pagination-bg: #f5f5f5;
+    --pagination-hover-bg: #e0e0e0;
+    --pagination-active-color: #fff;
+    --pagination-active-bg: #000;
+    --pagination-disabled-color: #ccc;
+    --pagination-border-radius: 4px;
+    --pagination-spacing: 0.5rem;
+    --pagination-item-size: 2rem;
+    --pagination-arrow-icon-size: 1.2rem;
+  }
+
+  .pagination-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pagination__list {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: var(--pagination-spacing);
+    padding: 0 var(--pagination-spacing);
+  }
+
+  .pagination__item {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: var(--pagination-item-size);
+    height: var(--pagination-item-size);
+    padding: 0 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--pagination-color);
+    background-color: var(--pagination-bg);
+    border-radius: var(--pagination-border-radius);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+  }
+
+  .pagination__item:hover:not(.pagination__item--current, .pagination__item--disabled) {
+    background-color: var(--pagination-hover-bg);
+    transform: translateY(-1px);
+  }
+
+  .pagination__item--current {
+    color: var(--pagination-active-color);
+    background-color: var(--pagination-active-bg);
+    font-weight: 600;
+    pointer-events: none;
+  }
+
+  .pagination__item-arrow {
+    padding: 0;
+  }
+
+  .pagination__item--disabled {
+    color: var(--pagination-disabled-color);
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  .pagination__item .icon-caret {
+    width: var(--pagination-arrow-icon-size);
+    height: var(--pagination-arrow-icon-size);
+    transition: transform 0.2s ease;
+  }
+
+  .pagination__item--next .icon {
+    transform: rotate(90deg);
+  }
+
+  .pagination__item--next:hover .icon {
+    transform: rotate(90deg) scale(1.1);
+  }
+
+  .pagination__item--prev .icon {
+    transform: rotate(-90deg);
+  }
+
+  .pagination__item--prev:hover .icon {
+    transform: rotate(-90deg) scale(1.1);
+  }
+
+  .list-unstyled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Responsividade */
+  @media (max-width: 480px) {
+    :root {
+      --pagination-item-size: 2.8rem;
+      --pagination-spacing: 0.3rem;
+    }
+    
+    .pagination__item {
+      font-size: 1.2rem;
+      padding: 0 0.6rem;
+    }
+    
+    .pagination__item-arrow {
+      min-width: 2.8rem;
+    }
+  }
+</style>
+
+{%- if paginate.parts.size > 0 -%}
+  <div class="pagination-wrapper">
+    <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+      <ul class="pagination__list list-unstyled" role="list">
+        {%- if paginate.previous -%}
+          <li>
+            <a
+              href="{{ paginate.previous.url }}{{ anchor }}"
+              class="pagination__item pagination__item-arrow pagination__item--prev link motion-reduce"
+              aria-label="{{ 'general.pagination.previous' | t }}"
+            >
+              {% render 'icon-caret' %}
+            </a>
+          </li>
+        {%- else -%}
+          <li>
+            <span class="pagination__item pagination__item-arrow pagination__item--prev pagination__item--disabled">
+              {% render 'icon-caret' %}
+            </span>
+          </li>
+        {%- endif -%}
+
+        {%- for part in paginate.parts -%}
+          {%- if part.is_link -%}
+            <li>
+              <a
+                href="{{ part.url }}{{ anchor }}"
+                class="pagination__item link"
+                aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+              >
+                {{- part.title -}}
+              </a>
+            </li>
+          {%- else -%}
+            {%- if part.title == paginate.current_page -%}
+              <li>
+                <span
+                  class="pagination__item pagination__item--current"
+                  aria-current="page"
+                  aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+                >
+                  {{- part.title -}}
+                </span>
+              </li>
+            {%- else -%}
+              <li>
+                <span class="pagination__item pagination__item--disabled">
+                  {{- part.title -}}
+                </span>
+              </li>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- if paginate.next -%}
+          <li>
+            <a
+              href="{{ paginate.next.url }}{{ anchor }}"
+              class="pagination__item pagination__item-arrow pagination__item--next link motion-reduce"
+              aria-label="{{ 'general.pagination.next' | t }}"
+            >
+              {% render 'icon-caret' %}
+            </a>
+          </li>
+        {%- else -%}
+          <li>
+            <span class="pagination__item pagination__item-arrow pagination__item--next pagination__item--disabled">
+              {% render 'icon-caret' %}
+            </span>
+          </li>
+        {%- endif -%}
+      </ul>
+    </nav>
+  </div>
+{%- endif -%}

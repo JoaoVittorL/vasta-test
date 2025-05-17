@@ -1,0 +1,28 @@
+<style>
+  .rating {
+    display: flex;
+    gap: 2px;
+  }
+
+  .star {
+    color: var(--yellow-review); /* amarelo para estrelas preenchidas */
+    font-size: 15px;
+  }
+
+  .star--empty {
+    color: var(--gray-dark); /* cinza para estrelas vazias */
+  }
+</style>
+
+<div class="rating">
+  {% assign full_stars = rating | plus: 0 %}
+  {% assign empty_stars = 5 | minus: full_stars %}
+
+  {% for i in (1..full_stars) -%}
+    <span class="star">★</span>
+  {% endfor %}
+
+  {% for i in (1..empty_stars) %}
+    <span class="star star--empty">★</span>
+  {% endfor %}
+</div>

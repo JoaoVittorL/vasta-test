@@ -1,0 +1,171 @@
+{% schema %}
+{
+  "name": "Atrativos da empresa",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título da seção de motivos para comprar conosco",
+      "default": "Shop Smarter, Shop With Vasta"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image_1",
+      "label": "Primeiro motivo"
+    },
+    {
+      "type": "textarea",
+      "id": "description_1",
+      "label": "Descrição da imagem 1",
+      "default": "Lorem ipsum dolor sit amet consectetur"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image_2",
+      "label": "Segundo motivo"
+    },
+    {
+      "type": "textarea",
+      "id": "description_2",
+      "label": "Descrição da imagem 2",
+      "default": "Lorem ipsum dolor sit amet consectetur"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image_3",
+      "label": "Terceiro motivo"
+    },
+    {
+      "type": "textarea",
+      "id": "description_3",
+      "label": "Descrição da imagem 3",
+      "default": "Lorem ipsum dolor sit amet consectetur"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image_4",
+      "label": "Quarto motibo"
+    },
+    {
+      "type": "textarea",
+      "id": "description_4",
+      "label": "Descrição da imagem 4",
+      "default": "Lorem ipsum dolor sit amet consectetur"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .invite-container {
+    background-color: var(--background-content-card);
+  }
+
+  .invite-content{
+    max-width:1170px;
+    width:100%;
+    margin-inline:auto;
+
+    padding-block: 60px;
+  }
+  .invite-list {
+    margin-top:35px;
+    display: flex;
+    flex-wrap:wrap;
+    gap: 44px;
+    justify-content:center;
+  }
+
+  .invite-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .invite-card-content img {
+    width:74px;
+    heigth:74px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .invite-card-description {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--black);
+    margin-top: 20px;
+  }
+
+  .invite-line-rigth{
+    width:1px;
+    background-color:var(--black);
+    opacity:10%
+  }
+
+  .invite-title{
+    font-size:36px !important;
+  }
+
+   @media (max-width: 768px) {
+      .invite-content{
+        padding-block:45px;
+      }
+
+     .invite-card-content img {
+        width:54px;
+        heigth:54px;
+      }
+
+     .invite-card-description{
+       font-size: 14px;
+     }
+   }
+
+   @media (max-width: 375px) {
+       .invite-content{
+         padding:12.5px 20px ;
+       }
+
+     .invite-card-content img {
+        width:50px;
+        heigth:50px;
+      }
+
+      .invite-card-description{
+       font-size: 12px;
+      }
+   }
+</style>
+
+<div class="invite-container" id="about">
+  <div class="invite-content">
+    <h3 class="invite-title">{{ section.settings.title }}</h3>
+
+    <div class="invite-list">
+      {% for i in (1..4) %}
+        {% assign banner_image = 'banner_image_' | append: i %}
+        {% assign description = 'description_' | append: i %}
+
+        <div class="invite-card-content">
+          {% if section.settings[banner_image] %}
+            <img
+              src="{{ section.settings[banner_image] | image_url: width: 400 }}"
+              alt="Image {{ i }}"
+              height="74"
+              width="74"
+            >
+          {% endif %}
+
+          {% if section.settings[description] != blank %}
+            <div class="invite-card-description">
+              {{ section.settings[description] }}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,540 @@
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+{
+  "name": "Rodapé com imagens",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "imagem_banner",
+      "label": "Imagem do banner"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "E-mail para contato",
+      "default": "info@brand.com"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Telefone para contato",
+      "default": "+1 (111) 222-3333"
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Endereço",
+      "default": "Informe o endereço"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Cartão de pagamento",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "imagem_card",
+          "label": "Imagem do cartão"
+        }
+      ]
+    },
+    {
+      "type": "card-product-2",
+      "name": "Cartão do produto",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "imagem_product",
+          "label": "Imagem dos produtos"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Rodapé com imagens"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .footer {
+    background: var(--bg-footer);
+    color: var(--text-main);
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1170px;
+    margin: auto;
+
+    padding-block:65px;
+  }
+
+  .footer-logo img {
+    max-width: 160px;
+    height: auto;
+  }
+
+  .email-coupon-container {
+    max-width: 555px;
+    width: 100%;
+    margin-block: 34px;
+  }
+
+  .email-coupon-label {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .email-coupon-form {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    background-color: #1a1a1a;
+    overflow: hidden;
+    margin-top: 12px;
+  }
+
+  .email-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    font-size: 16px;
+  }
+
+  .email-input:focus {
+    outline: none;
+  }
+
+  .coupon-button {
+    border: 1px solid white;
+    background-color: var(--success);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .coupon-button:hover {
+    background-color: var(--success-hover);
+  }
+
+  .content-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-block: 20px;
+  }
+
+  .content-images img {
+    width: 110px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .footer-contact {
+    display: flex;
+    gap: 10px;
+    margin-top: 11px;
+  }
+
+  .footer-content-item a {
+    color: var(--highlight);
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  .footer-columns {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 40px;
+  }
+
+  .footer-column span {
+    display: block;
+    font-weight: 400;
+    font-size: 1.1rem;
+    
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+     margin-top:25px;
+  }
+
+  .footer-column ul li {
+    margin-bottom:10px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    cursor: pointer;
+  }
+
+  .footer-column ul li:hover {
+    color: var(--text-main);
+  }
+
+  .footer-cards-content {
+    text-align: center;
+  }
+
+  .footer-cards-content img {
+    height: 44px;
+    width: 70px;
+    object-fit: contain;
+  }
+
+  .footer-cards-content span {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .footer-right-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+
+   .toggle-arrow {
+      display: none;
+    }
+    
+    .footer-column ul {
+      display: block;
+      gap:10px;
+    }
+
+   .footer-column ul li{
+      font-size:16px;
+      font-weight:400;
+      color:#D9D9D9;
+    }
+
+  .toggle-arrow i {
+      color: white;
+      font-size: 1rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .footer-column.open .toggle-arrow i {
+      transform: rotate(180deg);
+    }
+
+  .copyright{
+    font-size:16px;
+    font-weight: 400;
+    line-height: 110%;
+  }
+  /* ================
+     Mobile Toggle Styles
+  ================= */
+  
+  @media (max-width: 768px) {
+    .footer {
+      padding: 46px 104px;
+    }
+      .toggle-arrow {
+        display: inline-block;
+        background: none;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-left: 8px;
+        color:#fff ;
+      }
+    .footer-right-content{
+      margin-inline:auto;
+    }
+    .footer-logo img {
+      max-width: 200px;
+      height: 38px;
+      display:block;
+      margin-inline:auto;
+    }
+
+
+     .footer-content {
+      padding-inline: 0px;
+      padding-block: 0px;
+    }
+
+    
+      .footer-column ul {
+        display: none;
+        padding-left: 16px;
+      }
+    
+      .footer-column.open ul {
+        display: block;
+      }
+    
+      .footer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+       
+      }
+
+    .content-images {
+      gap: 16px;
+    }
+
+    .content-images img {
+      width: 76px;
+      height: 114px;
+    }
+
+    .footer-content {
+      padding-inline: 100px;
+      padding-block: 46px;
+    }
+
+    .contact-title-footer {
+      text-align: center;
+    }
+
+    .footer-contact {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-title-contact {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .footer-column span{
+       font-size:20px;
+    }
+
+    
+      
+    
+  }
+
+  @media (max-width: 375px) {
+    .footer {
+      padding: 40px 20px;
+    }
+
+    .content-images {
+      gap: 6px;
+    }
+
+     .footer-logo img {
+      max-width: 140px;
+      height: 30px;
+      display:block;
+      margin-inline:auto;
+    }
+    .content-images img {
+      width: 72px;
+      height: 114px;
+    }
+
+    .email-coupon-label {
+      font-size: 13px;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      padding-inline: 0px;
+      padding-block: 0px;
+    }
+
+    .email-input {
+      padding-block: 8px;
+      padding-inline: 14px;
+      font-size: 12px;
+    }
+
+    .coupon-button {
+      padding-block: 8px;
+      padding-inline: 16px;
+      font-size: 12px;
+    }
+
+    .footer-columns{
+      justify-content:center;  
+    }
+     .footer-column span{
+       font-size:14px;
+    }
+
+    .footer-column ul li{
+      font-size:12px;
+      font-weight:400;
+      color:#D9D9D9;
+    }
+
+      .copyright{
+        font-size:12px;
+      } 
+
+    .footer-cards-content img {
+        height: 35px;
+        width: 60px;
+        object-fit: contain;
+      }
+ 
+  }
+</style>
+
+<div class="footer" id="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      {% if section.settings.imagem_banner %}
+        <img
+          src="{{ section.settings.imagem_banner | image_url: width: 400 }}"
+          alt="Logo do rodapé"
+        >
+      {% endif %}
+
+      <!-- Formulário de cupom -->
+      <div class="email-coupon-container">
+        <label class="email-coupon-label">Enter Your Email To Receive 15% Coupon Immediately</label>
+        <div class="email-coupon-form">
+          <input type="email" placeholder="Enter Email Address" class="email-input">
+          <button class="coupon-button">Give Me 15% OFF</button>
+        </div>
+      </div>
+
+      <!-- Imagens de produtos -->
+      <div>
+        <h4 class="contact-title-footer">Popular Collections</h4>
+        <div class="content-images">
+          {% for product in collections.all.products limit: 4 %}
+            {% if product.featured_image %}
+              <a href="{{ product.url }}">
+                <img
+                  src="{{ product.featured_image | img_url: '1024x1024' }}"
+                  alt="{{ product.title | escape }}"
+                >
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Contatos -->
+      <h4 class="footer-title-contact">Get In Contact</h4>
+      <div class="footer-contact">
+        <div class="footer-content-item">
+          <i class="fas fa-phone-alt"></i>
+          <a href="tel:{{ section.settings.phone | remove: ' ' | remove: '(' | remove: ')' | remove: '-' }}">
+            {{ section.settings.phone }}
+          </a>
+        </div>
+        <div class="footer-content-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:{{ section.settings.email }}">
+            {{ section.settings.email }}
+          </a>
+        </div>
+        <div class="footer-content-item">
+          <i class="fas fa-location-dot"></i>
+          <a href="#">
+            {{ section.settings.address }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-right-content">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <div class="footer-header">
+            <span>Information</span>
+            <button class="toggle-arrow" aria-label="Toggle menu">
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+          <ul>
+            <li>About Us</li>
+            <li>Blog</li>
+            <li>Lorem Ipsum</li>
+            <li>FAQs</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <div class="footer-header">
+            <span>Customer Care</span>
+            <button class="toggle-arrow" aria-label="Toggle menu">  
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+          <ul>
+            <li>Contact Us</li>
+            <li>Terms of Service</li>
+            <li>Privacy Policy</li>
+            <li>Accessibility</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cartões de pagamento -->
+      <div class="footer-cards-content">
+        {% for block in section.blocks %}
+          {% if block.settings.imagem_card %}
+            <img
+              src="{{ block.settings.imagem_card | image_url: width: 100 }}"
+              alt="Cartão aceito"
+            >
+          {% endif %}
+        {% endfor %}
+        <span class="copyright">Copyright © 2023 Clench Fitness. All Rights Reserved.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function setupMobileToggle() {
+      const isMobile = window.innerWidth <= 768;
+      const buttons = document.querySelectorAll('.toggle-arrow');
+
+      buttons.forEach(button => {
+        const column = button.closest('.footer-column');
+        const ul = column.querySelector('ul');
+        const icon = button.querySelector('i');
+
+        if (isMobile) {
+          ul.style.display = 'none';
+          button.style.display = 'inline-block';
+
+          button.addEventListener('click', function () {
+            const isOpen = column.classList.toggle('open');
+            ul.style.display = isOpen ? 'block' : 'none';
+
+            // Ícone gira via CSS (.open)
+          });
+        } else {
+          ul.style.display = 'block';
+          button.style.display = 'none';
+        }
+      });
+    }
+
+    setupMobileToggle();
+    window.addEventListener('resize', () => location.reload());
+  });
+</script>

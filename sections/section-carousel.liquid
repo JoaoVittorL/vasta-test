@@ -1,0 +1,86 @@
+{{ 'glider.min.css' | asset_url | stylesheet_tag }}
+{{ 'section-caurosel.css' | asset_url | stylesheet_tag }}
+
+<div class="container-content">
+  <div class="page-width" id="{{ section.id }}">
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <div class="glider">
+        {% for block in section.blocks %}
+          {% if block.type == "product" %}
+            <div class="card-carousel">
+              <img
+                src="{{ block.settings.product.featured_image | img_url: '1024x1024' }}"
+                alt="{{ block.settings.product.featured_image.alt | escape }}"
+                loading="lazy"
+              >
+              <p>{{ block.settings.product.title }}</p>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <button class="carousel-btn next">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="{{ 'glider.min.js' | asset_url }}" defer></script>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    new Glider(document.querySelector('.glider'), {
+      slidesToShow: {{ section.settings.number_slider_desktop }},
+      arrows: {
+        prev: '#{{ section.id }} .prev',
+        next: '#{{ section.id }} .next'
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Section name",
+  "settings": [
+    {
+      "type": "number",
+      "id": "number_slider_desktop",
+      "label": "Número de páginas",
+      "default": 1
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Produto",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Produto"
+        },
+        {
+          "type":"text",
+          "id": "title",
+          "label": "Título",
+          "info":"Optional"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Carousel",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
