@@ -43,13 +43,13 @@
 {% endschema %}
 
 
-<div class="container-review" id="product-reviews">
+<div class="control-container" id="product-reviews">
   <h3>{{ section.settings.title }}</h3>
 
   <div class="subtitle">
     <span>{{ section.settings.subtitle }}</span>
     {% render 'stars-rating'
-      , rating: section.settings.rating %}
+      , rating: section.settings.rating %}s
   </div>
 
   {% if featured_collection and featured_collection.products_count > 0 %}

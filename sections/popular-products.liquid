@@ -18,7 +18,8 @@
             "type": "text",
             "id": "product_name",
             "label": "Nome do produto"
-          }, {
+          },
+          {
             "type": "range",
             "id": "rating",
             "label": "Avaliação (1 a 5 estrelas)",
@@ -26,12 +27,14 @@
             "max": 5,
             "step": 1,
             "default": 5
-          }, {
+          },
+          {
             "type": "text",
             "id": "review_count",
             "label": "Quantidade de avaliações",
             "default": "0"
-          }, {
+          },
+          {
             "type": "image_picker",
             "id": "product_image",
             "label": "Imagem do produto"
@@ -49,9 +52,9 @@
   }
 {% endschema %}
 
-{{ 'section-selling-products.css' | asset_url | stylesheet_tag }}
+{{ 'section-popular-products.css' | asset_url | stylesheet_tag }}
 
-<div class="container-content">
+<div class="control-container">
   <h3>{{ section.settings.title }}</h3>
   <div class="list-selling-products">
     {% for block in section.blocks %}

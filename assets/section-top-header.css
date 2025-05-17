@@ -7,23 +7,21 @@
 .header-content-item {
   color: var(--white);
   font-weight: 400;
-  font-size: 1.125rem;
+  font-size: 16px;
   line-height: 1.875rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 5px;
 }
 
-.header-content-item i {
-  font-size: 18px;
+.header-content-item i,
+.header-content-item a {
+  font-size: 16px;
 }
 
 @media (max-width: 768px) {
-  .header-content {
-    padding-inline: 20px;
-  }
-
-  .header-content-item {
+  .header-content-item i,
+  .header-content-item a {
     font-size: 14px;
   }
 
@@ -33,15 +31,12 @@
 }
 
 @media (max-width: 375px) {
-  .header-content {
-    padding-inline: 20px;
-  }
-
   .contact-text {
     display: none;
   }
 
-  .header-content-item {
+  .header-content-item i,
+  .header-content-item a {
     font-size: 12px;
   }
 }

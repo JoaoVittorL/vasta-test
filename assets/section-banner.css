@@ -1,7 +1,6 @@
 .hero-banner {
   position: relative;
   background: linear-gradient(90deg, var(--bg-footer) 60%, #052f5f 122%);
-  padding: 0 1rem;
   overflow: hidden;
   display: flex;
   align-items: center;
