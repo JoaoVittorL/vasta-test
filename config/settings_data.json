@@ -1,1 +1,138 @@
-{"current":{"sections":{"section-header":{"type":"section-header","settings":{"contact_email":"info@brand.com","center_message":"WE PAY SHIPPING ON ORDERS OVER $X","contact_phone":"+1 (111) 222-3333"}},"section-search-products":{"type":"section-search-products","settings":{"imagem_banner":"shopify:\/\/shop_images\/Logo_Dark.png"}},"section-list-navigation":{"type":"section-list-navigation","settings":{"custom_nav_menu":"main-menu"}},"section-banner":{"type":"section-banner","settings":{"title":"Lorem ipsum dolor sit amet consectetur","sub_title":"WITH 1600+ 5-STAR REVIEWS","comment":"Lorem ipsum dolor sit amet consectetur. Elit elementum rhoncus","stars":5,"banner_image":"shopify:\/\/shop_images\/182859bc187ff2b37af41466493aa4fe51b56ddd.png","button_text":"View More","button_link":""}},"section-invite-to-buy":{"type":"section-invite-to-buy","settings":{"title":"Shop Smarter, Shop With Vasta","description_1":"Lorem ipsum dolor sit amet consectetur","description_2":"Lorem ipsum dolor sit amet consectetur","description_3":"Lorem ipsum dolor sit amet consectetur","description_4":"Lorem ipsum dolor sit amet consectetur"}},"section-favorite-product":{"type":"section-favorite-product","settings":{"banner_image_1":"shopify:\/\/shop_images\/9f1c223547d70f6569373dfac9da30aa8515f842_1.png","title":"Cherished Favorites","comment":"Explore the harmony of exceptional Quality and Customer Praise","button_text":"View More","button_link":""}},"section-selling-products":{"type":"section-selling-products","settings":{"title":"Best Selling Products"}},"section-reviews":{"type":"section-reviews","settings":{"title":"Real Reviews, Real Experiences","subtitle":"With 1600+ 5-star reviews","rating":0,"products_per_page":4}},"section-sugestion-of-buy":{"type":"section-sugestion-of-buy","settings":{"title":"Best Selling Products"}},"section-footer":{"type":"section-footer","settings":{"email":"info@brand.com","phone":"+1 (111) 222-3333","address":"Informe o endereço"}},"section-carousel":{"type":"section-carousel","blocks":{"product_tdAd9c":{"type":"product","settings":{"product":"loren-ipsum","title":"Lorem Ipsum"}},"product_Eg7BQF":{"type":"product","settings":{"product":"pessoa-2","title":"Lorem Ipsum"}},"product_iBbkd6":{"type":"product","settings":{"product":"pessoa-3","title":"Lorem Ipsum"}},"product_4HHXcA":{"type":"product","settings":{"product":"pessoa-4","title":"Lorem Ipsum"}},"product_tUTQh6":{"type":"product","settings":{"product":"pessoa-5","title":"Lorem Ipsum"}}},"block_order":["product_tdAd9c","product_Eg7BQF","product_iBbkd6","product_4HHXcA","product_tUTQh6"],"settings":{"number_slider_desktop":5}}},"content_for_index":[]}}
+{
+  "current": {
+    "sections": {
+      "section-header": {
+        "type": "section-header",
+        "settings": {
+          "contact_email": "info@brand.com",
+          "center_message": "WE PAY SHIPPING ON ORDERS OVER $X",
+          "contact_phone": "+1 (111) 222-3333"
+        }
+      },
+      "section-search-products": {
+        "type": "section-search-products",
+        "settings": {
+          "imagem_banner": "shopify:\/\/shop_images\/Logo_Dark.png"
+        }
+      },
+      "section-list-navigation": {
+        "type": "section-list-navigation",
+        "settings": {
+          "custom_nav_menu": "main-menu"
+        }
+      },
+      "section-banner": {
+        "type": "section-banner",
+        "settings": {
+          "title": "Lorem ipsum dolor sit amet consectetur",
+          "sub_title": "WITH 1600+ 5-STAR REVIEWS",
+          "comment": "Lorem ipsum dolor sit amet consectetur. Elit elementum rhoncus",
+          "stars": 5,
+          "banner_image": "shopify:\/\/shop_images\/182859bc187ff2b37af41466493aa4fe51b56ddd.png",
+          "button_text": "View More",
+          "button_link": ""
+        }
+      },
+      "section-invite-to-buy": {
+        "type": "section-invite-to-buy",
+        "settings": {
+          "title": "Shop Smarter, Shop With Vasta",
+          "description_1": "Lorem ipsum dolor sit amet consectetur",
+          "description_2": "Lorem ipsum dolor sit amet consectetur",
+          "description_3": "Lorem ipsum dolor sit amet consectetur",
+          "description_4": "Lorem ipsum dolor sit amet consectetur"
+        }
+      },
+      "section-favorite-product": {
+        "type": "section-favorite-product",
+        "settings": {
+          "banner_image_1": "shopify:\/\/shop_images\/9f1c223547d70f6569373dfac9da30aa8515f842_1.png",
+          "title": "Cherished Favorites",
+          "comment": "Explore the harmony of exceptional Quality and Customer Praise",
+          "button_text": "View More",
+          "button_link": ""
+        }
+      },
+      "section-selling-products": {
+        "type": "section-selling-products",
+        "settings": {
+          "title": "Best Selling Products"
+        }
+      },
+      "section-reviews": {
+        "type": "section-reviews",
+        "settings": {
+          "title": "Real Reviews, Real Experiences",
+          "subtitle": "With 1600+ 5-star reviews",
+          "rating": 0,
+          "products_per_page": 4
+        }
+      },
+      "section-sugestion-of-buy": {
+        "type": "section-sugestion-of-buy",
+        "settings": {
+          "title": "Best Selling Products"
+        }
+      },
+      "section-footer": {
+        "type": "section-footer",
+        "settings": {
+          "email": "info@brand.com",
+          "phone": "+1 (111) 222-3333",
+          "address": "Informe o endereço"
+        }
+      },
+      "section-carousel": {
+        "type": "section-carousel",
+        "blocks": {
+          "product_tdAd9c": {
+            "type": "product",
+            "settings": {
+              "product": "loren-ipsum",
+              "title": "Lorem Ipsum"
+            }
+          },
+          "product_Eg7BQF": {
+            "type": "product",
+            "settings": {
+              "product": "pessoa-2",
+              "title": "Lorem Ipsum"
+            }
+          },
+          "product_iBbkd6": {
+            "type": "product",
+            "settings": {
+              "product": "pessoa-3",
+              "title": "Lorem Ipsum"
+            }
+          },
+          "product_4HHXcA": {
+            "type": "product",
+            "settings": {
+              "product": "pessoa-4",
+              "title": "Lorem Ipsum"
+            }
+          },
+          "product_tUTQh6": {
+            "type": "product",
+            "settings": {
+              "product": "pessoa-5",
+              "title": "Lorem Ipsum"
+            }
+          }
+        },
+        "block_order": [
+          "product_tdAd9c",
+          "product_Eg7BQF",
+          "product_iBbkd6",
+          "product_4HHXcA",
+          "product_tUTQh6"
+        ],
+        "settings": {
+          "number_slider_desktop": 5
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

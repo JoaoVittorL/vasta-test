@@ -1,64 +1,58 @@
-{{ 'section-footer.css' | asset_url | stylesheet_tag }}
-
 {% schema %}
-{
-  "name": "Rodapé com imagens",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "imagem_banner",
-      "label": "Imagem do banner"
-    },
-    {
-      "type": "text",
-      "id": "email",
-      "label": "E-mail para contato",
-      "default": "info@brand.com"
-    },
-    {
-      "type": "text",
-      "id": "phone",
-      "label": "Telefone para contato",
-      "default": "+1 (111) 222-3333"
-    },
-    {
-      "type": "text",
-      "id": "address",
-      "label": "Endereço",
-      "default": "Informe o endereço"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "card",
-      "name": "Cartão de pagamento",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "imagem_card",
-          "label": "Imagem do cartão"
-        }
-      ]
-    },
-    {
-      "type": "card-product-2",
-      "name": "Cartão do produto",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "imagem_product",
-          "label": "Imagem dos produtos"
-        }
-      ]
-    }
-  ],
-  "max_blocks": 10,
-  "presets": [
-    {
-      "name": "Rodapé com imagens"
-    }
-  ]
-}
+  {
+    "name": "Rodapé com imagens",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "imagem_banner",
+        "label": "Imagem do banner"
+      }, {
+        "type": "text",
+        "id": "email",
+        "label": "E-mail para contato",
+        "default": "info@brand.com"
+      }, {
+        "type": "text",
+        "id": "phone",
+        "label": "Telefone para contato",
+        "default": "+1 (111) 222-3333"
+      }, {
+        "type": "text",
+        "id": "address",
+        "label": "Endereço",
+        "default": "Informe o endereço"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Cartão de pagamento",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "imagem_card",
+            "label": "Imagem do cartão"
+          }
+        ]
+      }, {
+        "type": "card-product-2",
+        "name": "Cartão do produto",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "imagem_product",
+            "label": "Imagem dos produtos"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 10,
+    "presets": [
+      {
+        "name": "Rodapé com imagens"
+      }
+    ]
+  }
 {% endschema %}
 
 <style>
@@ -74,8 +68,7 @@
     gap: 2rem;
     max-width: 1170px;
     margin: auto;
-
-    padding-block:65px;
+    padding-block: 65px;
   }
 
   .footer-logo img {
@@ -168,18 +161,16 @@
     display: block;
     font-weight: 400;
     font-size: 1.1rem;
-    
   }
 
   .footer-column ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-     margin-top:25px;
+    margin: 25px 0 0;
   }
 
   .footer-column ul li {
-    margin-bottom:10px;
+    margin-bottom: 10px;
     font-size: 0.95rem;
     color: var(--text-muted);
     cursor: pointer;
@@ -210,87 +201,83 @@
     justify-content: space-between;
   }
 
+  .toggle-arrow {
+    display: none;
+  }
 
-   .toggle-arrow {
-      display: none;
-    }
-    
-    .footer-column ul {
-      display: block;
-      gap:10px;
-    }
+  .footer-column ul {
+    display: block;
+    gap: 10px;
+  }
 
-   .footer-column ul li{
-      font-size:16px;
-      font-weight:400;
-      color:#D9D9D9;
-    }
+  .footer-column ul li {
+    font-size: 16px;
+    font-weight: 400;
+    color: #d9d9d9;
+  }
 
   .toggle-arrow i {
-      color: white;
-      font-size: 1rem;
-      transition: transform 0.3s ease;
-    }
-    
-    .footer-column.open .toggle-arrow i {
-      transform: rotate(180deg);
-    }
+    color: white;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+  }
 
-  .copyright{
-    font-size:16px;
+  .footer-column.open .toggle-arrow i {
+    transform: rotate(180deg);
+  }
+
+  .copyright {
+    font-size: 16px;
     font-weight: 400;
     line-height: 110%;
   }
-  /* ================
-     Mobile Toggle Styles
-  ================= */
-  
+
   @media (max-width: 768px) {
     .footer {
       padding: 46px 104px;
     }
-      .toggle-arrow {
-        display: inline-block;
-        background: none;
-        border: none;
-        font-size: 1rem;
-        cursor: pointer;
-        margin-left: 8px;
-        color:#fff ;
-      }
-    .footer-right-content{
-      margin-inline:auto;
+
+    .toggle-arrow {
+      display: inline-block;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-left: 8px;
+      color: #fff;
     }
+
+    .footer-right-content {
+      margin-inline: auto;
+    }
+
     .footer-logo img {
       max-width: 200px;
       height: 38px;
-      display:block;
-      margin-inline:auto;
+      display: block;
+      margin-inline: auto;
     }
 
-
-     .footer-content {
-      padding-inline: 0px;
-      padding-block: 0px;
+    .footer-content {
+      padding-inline: 0;
+      padding-block: 0;
     }
 
-    
-      .footer-column ul {
-        display: none;
-        padding-left: 16px;
-      }
-    
-      .footer-column.open ul {
-        display: block;
-      }
-    
-      .footer-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-       
-      }
+    .footer-column ul {
+      display: none;
+      padding-left: 16px;
+    }
+
+    .footer-column.open ul {
+      display: block;
+    }
+
+    .footer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
 
     .content-images {
       gap: 16px;
@@ -320,13 +307,9 @@
       text-align: center;
     }
 
-    .footer-column span{
-       font-size:20px;
+    .footer-column span {
+      font-size: 20px;
     }
-
-    
-      
-    
   }
 
   @media (max-width: 375px) {
@@ -338,12 +321,13 @@
       gap: 6px;
     }
 
-     .footer-logo img {
+    .footer-logo img {
       max-width: 140px;
       height: 30px;
-      display:block;
-      margin-inline:auto;
+      display: block;
+      margin-inline: auto;
     }
+
     .content-images img {
       width: 72px;
       height: 114px;
@@ -356,8 +340,8 @@
     }
 
     .footer-content {
-      padding-inline: 0px;
-      padding-block: 0px;
+      padding-inline: 0;
+      padding-block: 0;
     }
 
     .email-input {
@@ -372,29 +356,29 @@
       font-size: 12px;
     }
 
-    .footer-columns{
-      justify-content:center;  
-    }
-     .footer-column span{
-       font-size:14px;
+    .footer-columns {
+      justify-content: center;
     }
 
-    .footer-column ul li{
-      font-size:12px;
-      font-weight:400;
-      color:#D9D9D9;
+    .footer-column span {
+      font-size: 14px;
     }
 
-      .copyright{
-        font-size:12px;
-      } 
+    .footer-column ul li {
+      font-size: 12px;
+      font-weight: 400;
+      color: #d9d9d9;
+    }
+
+    .copyright {
+      font-size: 12px;
+    }
 
     .footer-cards-content img {
-        height: 35px;
-        width: 60px;
-        object-fit: contain;
-      }
- 
+      height: 35px;
+      width: 60px;
+      object-fit: contain;
+    }
   }
 </style>
 
@@ -402,17 +386,17 @@
   <div class="footer-content">
     <div class="footer-logo">
       {% if section.settings.imagem_banner %}
-        <img
-          src="{{ section.settings.imagem_banner | image_url: width: 400 }}"
-          alt="Logo do rodapé"
-        >
+        <img src="{{ section.settings.imagem_banner | image_url: width: 400 }}" alt="Logo do rodapé">
       {% endif %}
 
       <!-- Formulário de cupom -->
       <div class="email-coupon-container">
         <label class="email-coupon-label">Enter Your Email To Receive 15% Coupon Immediately</label>
         <div class="email-coupon-form">
-          <input type="email" placeholder="Enter Email Address" class="email-input">
+          <input
+            type="email"
+            placeholder="Enter Email Address"
+            class="email-input">
           <button class="coupon-button">Give Me 15% OFF</button>
         </div>
       </div>
@@ -424,10 +408,7 @@
           {% for product in collections.all.products limit: 4 %}
             {% if product.featured_image %}
               <a href="{{ product.url }}">
-                <img
-                  src="{{ product.featured_image | img_url: '1024x1024' }}"
-                  alt="{{ product.title | escape }}"
-                >
+                <img src="{{ product.featured_image | img_url: '1024x1024' }}" alt="{{ product.title | escape }}">
               </a>
             {% endif %}
           {% endfor %}
@@ -477,7 +458,7 @@
         <div class="footer-column">
           <div class="footer-header">
             <span>Customer Care</span>
-            <button class="toggle-arrow" aria-label="Toggle menu">  
+            <button class="toggle-arrow" aria-label="Toggle menu">
               <i class="fas fa-chevron-down"></i>
             </button>
           </div>
@@ -494,13 +475,10 @@
       <div class="footer-cards-content">
         {% for block in section.blocks %}
           {% if block.settings.imagem_card %}
-            <img
-              src="{{ block.settings.imagem_card | image_url: width: 100 }}"
-              alt="Cartão aceito"
-            >
+            <img src="{{ block.settings.imagem_card | image_url: width: 100 }}" alt="Cartão aceito">
           {% endif %}
         {% endfor %}
-        <span class="copyright">Copyright © 2023 Clench Fitness. All Rights Reserved.</span>
+        <span class="copyright">Copyright 2023 Clench Fitness. All Rights Reserved.</span>
       </div>
     </div>
   </div>
@@ -512,7 +490,7 @@
       const isMobile = window.innerWidth <= 768;
       const buttons = document.querySelectorAll('.toggle-arrow');
 
-      buttons.forEach(button => {
+      buttons.forEach((button) => {
         const column = button.closest('.footer-column');
         const ul = column.querySelector('ul');
         const icon = button.querySelector('i');
@@ -524,8 +502,6 @@
           button.addEventListener('click', function () {
             const isOpen = column.classList.toggle('open');
             ul.style.display = isOpen ? 'block' : 'none';
-
-            // Ícone gira via CSS (.open)
           });
         } else {
           ul.style.display = 'block';
