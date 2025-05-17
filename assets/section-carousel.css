@@ -1,0 +1,128 @@
+.container-content {
+  width: 100%;
+  position: relative;
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.glider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  max-width: 100%;
+}
+
+.card-carousel {
+  width: 250px;
+  height: 350px;
+  flex-shrink: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.card-carousel p {
+  z-index: 2;
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  color: #fff;
+  font-size: 24px;
+  background: transparent;
+  text-align: center;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
+  color: white;
+  font-size: 1.5rem;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.carousel-btn i {
+  pointer-events: none;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .card-carousel {
+    width: 200px;
+    height: 300px;
+  }
+
+  .card-carousel img {
+    height: 100%;
+  }
+  .card-carousel p {
+    position: absolute;
+    font-size: 20px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 375px) {
+  .card-carousel {
+    width: 180px;
+    height: 260px;
+  }
+  .carousel-btn {
+    width: 34px;
+    height: 34px;
+  }
+  .card-carousel img {
+    height: 100%;
+  }
+
+  .card-carousel p {
+    font-size: 20px;
+    bottom: 20px;
+  }
+}

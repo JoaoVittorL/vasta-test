@@ -1,58 +1,55 @@
 {% schema %}
-{
-  "name": "Banner principal",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Main Title",
-      "default": "Lorem ipsum dolor sit amet consectetur"
-    },
-    {
-      "type": "text",
-      "id": "sub_title",
-      "label": "Subtitle",
-      "default": "WITH 1600+ 5-STAR REVIEWS"
-    },
-    {
-      "type": "text",
-      "id": "comment",
-      "label": "Description",
-      "default": "Lorem ipsum dolor sit amet consectetur. Elit elementum rhoncus"
-    },
-    {
-      "type": "range",
-      "id": "stars",
-      "label": "Star Rating",
-      "min": 1,
-      "max": 5,
-      "step": 1,
-      "default": 5
-    },
-    {
-      "type": "image_picker",
-      "id": "banner_image",
-      "label": "Banner Image"
-    },
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button Text",
-      "default": "View More"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button Link"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Hero Banner",
-      "category": "Hero Sections"
-    }
-  ]
-}
+  {
+    "name": "Banner principal",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Main Title",
+        "default": "Lorem ipsum dolor sit amet consectetur"
+      },
+      {
+        "type": "text",
+        "id": "sub_title",
+        "label": "Subtitle",
+        "default": "WITH 1600+ 5-STAR REVIEWS"
+      },
+      {
+        "type": "text",
+        "id": "comment",
+        "label": "Description",
+        "default": "Lorem ipsum dolor sit amet consectetur. Elit elementum rhoncus"
+      },
+      {
+        "type": "range",
+        "id": "stars",
+        "label": "Star Rating",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "default": 5
+      }, {
+        "type": "image_picker",
+        "id": "banner_image",
+        "label": "Banner Image"
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "View More"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Banner",
+        "category": "Hero Sections"
+      }
+    ]
+  }
 {% endschema %}
 
 <style>
@@ -129,7 +126,8 @@
     border-radius: 109px;
     font-size: 1.25rem;
     text-decoration: none;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s
+    , transform 0.2s;
     margin-bottom: 0.625rem;
     font-weight: 500;
     width: 170px;
@@ -194,7 +192,7 @@
     .hero-banner__content {
       flex: 1 1 auto;
       padding-bottom: 0;
-      margin-top:42px;
+      margin-top: 42px;
       align-items: center;
     }
 
@@ -254,20 +252,20 @@
     }
 
     .hero-banner__subtitle span {
-      font-size:14px;
+      font-size: 14px;
     }
 
-    .hero-banner__title{
-      font-size:28px;
-      line-height:36px;
+    .hero-banner__title {
+      font-size: 28px;
+      line-height: 36px;
     }
 
-    .hero-banner__button{
-      margin-top: 0px !important;
+    .hero-banner__button {
+      margin-top: 0 !important;
     }
-    .hero-banner__description{
-      font-size:14px;
-      line-height:20px;
+    .hero-banner__description {
+      font-size: 14px;
+      line-height: 20px;
     }
   }
 </style>
@@ -277,7 +275,8 @@
     <div class="hero-banner__content">
       <div class="hero-banner__subtitle">
         <span>{{ section.settings.sub_title }}</span>
-        {% render 'stars-rating', rating: section.settings.stars %}
+        {% render 'stars-rating'
+          , rating: section.settings.stars %}
       </div>
       <h2 class="hero-banner__title">{{ section.settings.title }}</h2>
       <p class="hero-banner__description">{{ section.settings.comment }}</p>
@@ -291,14 +290,7 @@
       <div class="hero-banner__image-glow"></div>
       {%- if section.settings.banner_image -%}
         {{
-          section.settings.banner_image
-          | image_url: width: 1000
-          | image_tag:
-            class: 'hero-banner__image',
-            loading: 'lazy',
-            width: 1000,
-            height: 1000,
-            alt: section.settings.banner_image.alt
+          section.settings.banner_image | image_url: width: 1000 | image_tag: class: 'hero-banner__image', loading: 'lazy', width: 1000, height: 1000, alt: section.settings.banner_image.alt
         }}
       {%- endif -%}
     </div>

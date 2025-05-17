@@ -1,5 +1,5 @@
 {{ 'glider.min.css' | asset_url | stylesheet_tag }}
-{{ 'section-caurosel.css' | asset_url | stylesheet_tag }}
+{{ 'section-carousel.css' | asset_url | stylesheet_tag }}
 
 <div class="container-content">
   <div class="page-width" id="{{ section.id }}">
@@ -15,8 +15,7 @@
               <img
                 src="{{ block.settings.product.featured_image | img_url: '1024x1024' }}"
                 alt="{{ block.settings.product.featured_image.alt | escape }}"
-                loading="lazy"
-              >
+                loading="lazy">
               <p>{{ block.settings.product.title }}</p>
             </div>
           {% endif %}
@@ -29,7 +28,6 @@
     </div>
   </div>
 </div>
-
 
 
 <script src="{{ 'glider.min.js' | asset_url }}" defer></script>
@@ -47,40 +45,39 @@
 </script>
 
 {% schema %}
-{
-  "name": "Section name",
-  "settings": [
-    {
-      "type": "number",
-      "id": "number_slider_desktop",
-      "label": "Número de páginas",
-      "default": 1
-    }
-  ],
-  "blocks": [
-    {
-      "type": "product",
-      "name": "Produto",
-      "settings": [
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Produto"
-        },
-        {
-          "type":"text",
-          "id": "title",
-          "label": "Título",
-          "info":"Optional"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Carousel",
-      "category": "Custom"
-    }
-  ]
-}
+  {
+    "name": "Section name",
+    "settings": [
+      {
+        "type": "number",
+        "id": "number_slider_desktop",
+        "label": "Número de páginas",
+        "default": 1
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Produto",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Produto"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Título",
+            "info": "Optional"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Carousel",
+        "category": "Custom"
+      }
+    ]
+  }
 {% endschema %}
