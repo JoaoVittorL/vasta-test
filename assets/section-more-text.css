@@ -1,0 +1,44 @@
+.body-text {
+  background: linear-gradient(to bottom, #fff, #f5f5f5);
+  text-align: center;
+  padding-block: 2rem;
+  min-height: 200px; /* Adicione isso */
+}
+
+.description {
+  font-size: 20px;
+  color: #7d7d7d;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+  margin-top: 35px;
+}
+
+#moreText {
+  font-size: 20px;
+}
+
+.hidden-text {
+  display: none;
+}
+
+a.button {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #232323;
+  cursor: pointer;
+}
+
+a.button:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 380px) {
+  .description,
+  #moreText {
+    font-size: 14px;
+  }
+}

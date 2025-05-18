@@ -1,0 +1,47 @@
+{{ 'section-more-text.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+  {
+    "name": "Feedbacks dos usuários",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Título da seção de reviews",
+        "default": "Real Reviews, Real Experiences"
+      }
+    ]
+  }
+{% endschema %}
+
+
+<div class="body-text">
+  <h3>Vasta Essence: Dive into Our World</h3>
+
+  <p class="description">
+    Pellentesque cras adipiscing tempus libero vel nullam mauris tellus.
+    <span class="hidden-text" id="moreText">
+      Aliquam ultrices tellus consequat amet aliquam est in neque.
+    </span>
+  </p>
+
+  <a
+    class="button"
+    onclick="toggleText()"
+    id="seeMoreBtn">SEE MORE</a>
+</div>
+
+<script>
+    function toggleText() {
+      const moreText = document.getElementById("moreText");
+      const btn = document.getElementById("seeMoreBtn");
+  
+      if (moreText.style.display === "inline") {
+        moreText.style.display = "none";
+        btn.textContent = "SEE MORE";
+      } else {
+        moreText.style.display = "inline";
+        btn.textContent = "SEE LESS";
+      }
+    }
+</script>
