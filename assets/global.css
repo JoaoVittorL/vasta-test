@@ -16,9 +16,9 @@
 
   --font-family: "DM Sans", sans-serif;
   --font-size-base: 1.6rem;
-  --font-size-h2: clamp(2.8rem, 5vw, 4.5rem);
-  --font-size-h3: clamp(2.4rem, 4vw, 3.6rem);
-  --font-size-h4: clamp(1.4rem, 3vw, 2rem);
+  --font-size-h2: clamp(45px, 5vw, 4.5rem);
+  --font-size-h3: clamp(36px, 4vw, 3.6rem);
+  --font-size-h4: clamp(24px, 3vw, 2rem);
 
   --line-height-h2: 4rem;
   --line-height-h3: 120%;

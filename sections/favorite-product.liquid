@@ -90,7 +90,7 @@
 
 
 <div class="container-favorite-feedbacks" id="favorite">
-  <div class="content-favorite-feedbacks">
+  <div class="content-favorite-feedbacks" >
     <div class="content-title">
       <h2 class="title-favorite-feedbacks">{{ section.settings.title }}</h2>
       <p class="comment-favorite-feedbacks">{{ section.settings.comment }}</p>
@@ -101,12 +101,8 @@
     </div>
     <div class="content-feedback">
       {% for block in section.blocks %}
-        {% render 'feedback-card'
-          , name: block.settings.name
-          , comment: block.settings.comment
-          , rating: block.settings.rating
-          , image: block.settings.person_image %}
-      {% endfor %}
+        {% render 'feedback-card', name: block.settings.name, comment: block.settings.comment, rating: block.settings.rating, image: block.settings.person_image %}
+       {% endfor %}
     </div>
   </div>
 </div>

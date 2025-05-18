@@ -138,6 +138,9 @@
   color: var(--yellow-review);
   font-size: 15px;
 }
+.title-favorite-feedbacks {
+    font-size: 45px;
+  }
 
 .star.empty {
   color: var(--gray-dark);
@@ -152,7 +155,10 @@
   .testimonial-card:not(:first-of-type) {
     display: none;
   }
-
+  .title-favorite-feedbacks {
+    font-size: 28px;
+    line-height: 36px;
+  }
   .testimonial-card {
     margin-inline: auto;
   }

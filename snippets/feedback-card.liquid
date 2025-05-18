@@ -67,6 +67,7 @@
   @media (max-width: 375px) {
    .testimonial-content {
      font-size: 18px;
+     line-height: 110%;
     }
   } 
 </style>
@@ -85,7 +86,7 @@
       {% render 'stars-rating', rating: rating %}
     </div>
   </div>
-  <span class="testimonial-content">
+  <p class="testimonial-content">
     {{ comment }}
-  </span>
+  </p>
 </div>
