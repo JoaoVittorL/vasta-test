@@ -201,6 +201,50 @@
       },
       "suggestions": {
         "type": "suggestions",
+        "blocks": {
+          "product_suggestions_EKcJVN": {
+            "type": "product-suggestions",
+            "settings": {
+              "product": "Product Name",
+              "rating": 5,
+              "quantity_reviews": "3",
+              "product_image": "shopify://shop_images/65d5b09ab9848d999dfd37be252460d39be3bde3.png"
+            }
+          },
+          "product_suggestions_c3Gfmf": {
+            "type": "product-suggestions",
+            "settings": {
+              "product": "Product Name",
+              "rating": 5,
+              "quantity_reviews": "500",
+              "product_image": "shopify://shop_images/80bff8f101fd6c2c40417328468f17c5e1cc1e18.png"
+            }
+          },
+          "product_suggestions_n8jNgF": {
+            "type": "product-suggestions",
+            "settings": {
+              "product": "Product Name",
+              "rating": 5,
+              "quantity_reviews": "800",
+              "product_image": "shopify://shop_images/faf2ad95be404a704c7ffb3e4e17742105ffd07a.png"
+            }
+          },
+          "product_suggestions_zHyEaF": {
+            "type": "product-suggestions",
+            "settings": {
+              "product": "Product Name",
+              "rating": 5,
+              "quantity_reviews": "0",
+              "product_image": "shopify://shop_images/3becf93c9b73b6115b118569095db1c82f34f5ba.png"
+            }
+          }
+        },
+        "block_order": [
+          "product_suggestions_EKcJVN",
+          "product_suggestions_c3Gfmf",
+          "product_suggestions_n8jNgF",
+          "product_suggestions_zHyEaF"
+        ],
         "settings": {
           "title": "Best Selling Products"
         }
