@@ -18,12 +18,6 @@
         "default": "With 1600+ 5-star reviews"
       },
       {
-        "type": "number",
-        "id": "rating",
-        "label": "Rating atual",
-        "default": 0
-      },
-      {
         "type": "range",
         "id": "products_per_page",
         "min": 4,
@@ -33,15 +27,56 @@
         "label": "Products per page"
       }
     ],
+    "blocks": [
+      {
+        "type": "custom_review",
+        "name": "Review personalizado",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Título do produto",
+            "default": "Produto Exemplo"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Descrição",
+            "default": "Descrição do review."
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Imagem do produto"
+          },
+          {
+            "type": "number",
+            "id": "rating",
+            "label": "Nota (0 a 5)",
+            "default": 5
+          },
+          {
+            "type": "text",
+            "id": "state",
+            "label": "Localização",
+            "default": "United States"
+          }
+        ]
+      }
+    ],
     "presets": [
       {
         "name": "Reviews dinâmicos",
-        "category": "Testimonials"
+        "category": "Testimonials",
+        "blocks": [
+          {
+            "type": "custom_review"
+          }
+        ]
       }
     ]
   }
 {% endschema %}
-
 
 <div class="control-container reviews-container" id="product-reviews">
   <h3>{{ section.settings.title }}</h3>
@@ -52,31 +87,21 @@
       , rating: section.settings.rating %}
   </div>
 
-  {% if featured_collection and featured_collection.products_count > 0 %}
-    {% paginate featured_collection.products by section.settings.products_per_page %}
-      <div class="list-review">
-        {% for product in featured_collection.products %}
+  {% if section.blocks.size > 0 %}
+    <div class="list-review">
+      {% for block in section.blocks %}
+        {% if block.type == 'custom_review' %}
           {% render 'reviews-card'
-            , title: product.title
-            , state: 'United State'
-            , description: product.description
-            , rating: 5
-            , image: product.featured_image
-            , product_image: product.featured_image
-            , product: product
+            , title: block.settings.title
+            , state: block.settings.state
+            , description: block.settings.description
+            , rating: block.settings.rating
+            , image: block.settings.image
+            , product_image: block.settings.image
           %}
-        {% endfor %}
-      </div>
-
-      {% if paginate.pages > 1 %}
-        <div style="margin-top:30px;" class="pagination-container">
-          {% render 'pagination'
-            , paginate: paginate
-            , anchor: '#product-reviews' %}
-        </div>
-      {% endif %}
-    {% endpaginate %}
-  {% else %}
-    <p>Coleção 'all-products' não encontrada ou está vazia.</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <p>Nenhum review disponível ou coleção 'all-products' está vazia.</p>
   {% endif %}
 </div>
