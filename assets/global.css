@@ -35,7 +35,7 @@
 
 html,
 body {
-  font-size: 87.5%;
+  font-size: 62.5%;
   scroll-behavior: smooth;
   background-color: var(--white);
   color: var(--black);
