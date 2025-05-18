@@ -1,7 +1,8 @@
 {{ 'glider.min.css' | asset_url | stylesheet_tag }}
 {{ 'section-carousel.css' | asset_url | stylesheet_tag }}
 
-<div class="container-control">
+<div class="control-container container-carousel">
+  <h3 class="title-carousel">Shop by Collection</h3>
   <div class="page-width" id="{{ section.id }}">
     <div class="carousel-wrapper">
       <button class="carousel-btn prev">
@@ -32,7 +33,7 @@
 
 <script src="{{ 'glider.min.js' | asset_url }}" defer></script>
 
-<script>
+<script> 
   window.addEventListener("DOMContentLoaded", () => {
     new Glider(document.querySelector('.glider'), {
       slidesToShow: {{ section.settings.number_slider_desktop }},
