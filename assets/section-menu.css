@@ -146,7 +146,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 380px) {
   .fa-bars,
   .fa-shopping-cart {
     font-size: 16px;

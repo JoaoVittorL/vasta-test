@@ -139,8 +139,8 @@
   font-size: 15px;
 }
 .title-favorite-feedbacks {
-    font-size: 45px;
-  }
+  font-size: 45px;
+}
 
 .star.empty {
   color: var(--gray-dark);
@@ -151,7 +151,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 380px) {
   .testimonial-card:not(:first-of-type) {
     display: none;
   }

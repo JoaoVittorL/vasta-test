@@ -34,7 +34,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 380px) {
   .contact-text {
     display: none;
   }

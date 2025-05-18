@@ -67,7 +67,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 380px) {
   .invite-container {
     padding-block: 20px;
   }

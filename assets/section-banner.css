@@ -181,7 +181,7 @@
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 380px) {
   .hero-banner__container {
     flex-wrap: wrap;
   }
