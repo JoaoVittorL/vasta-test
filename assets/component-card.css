@@ -1,17 +1,12 @@
 :root {
-  --card-radius: 12px;
   --font-size-title: clamp(14px, 2vw, 18px);
   --font-size-rating: clamp(10px, 1.5vw, 12px);
-  --white: #ffffff;
-  --gray-dark: #232323;
-  --yellow-review: #ffc107;
 }
 
 .product-card {
-  background-color: var(--white);
   width: 100%;
   max-width: 274px;
-  border-radius: var(--card-radius);
+  border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -26,7 +21,7 @@
 }
 
 .card-image {
-  background-color: var(--white);
+  background-color: var(--background-content-card);
   height: 260px;
   display: flex;
   align-items: center;
