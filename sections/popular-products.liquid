@@ -1,3 +1,5 @@
+{{ 'section-suggestions.css' | asset_url | stylesheet_tag }}
+
 {% schema %}
   {
     "name": "Produtos mais vendidos",
@@ -52,11 +54,10 @@
   }
 {% endschema %}
 
-{{ 'section-popular-products.css' | asset_url | stylesheet_tag }}
 
-<div class="control-container popular-products-container">
-  <h3 class="popular-products-title">{{ section.settings.title }}</h3>
-  <div class="list-selling-products">
+<div class="container-content suggestions-container">
+  <h3>{{ section.settings.title }}</h3>
+  <div class="list-suggestions-products">
     {% for block in section.blocks %}
       {% render 'products-card'
         , product_image: block.settings.product_image
