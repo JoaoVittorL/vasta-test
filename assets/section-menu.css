@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 1.75rem;
+  padding-block: 28px;
 }
 
 .search-header-hamburger {
@@ -83,6 +83,9 @@
 }
 
 .coupon-button-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   border: none;
   border-left: 1px solid var(--black);
   background-color: none;
@@ -94,12 +97,17 @@
   cursor: pointer;
   transition: background 0.3s;
 }
+
+.fa-shopping-cart {
+  font-size: 30px;
+}
+
 @media (max-width: 768px) {
   .search-header-container {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding-block: 16px;
   }
 
   .fa-bars,

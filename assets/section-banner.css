@@ -45,7 +45,7 @@
 
 .hero-banner__title {
   font-weight: 700;
-  font-size: 2.8125rem;
+  font-size: 50px;
   line-height: 1.2;
   margin-bottom: 0.625rem;
   color: #fff;
@@ -53,7 +53,7 @@
 
 .hero-banner__description {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 30px;
   color: var(--white);
   margin-bottom: 1.25rem;
@@ -63,9 +63,9 @@
   display: inline-block;
   background-color: var(--button-green);
   color: var(--white);
-  padding: 0.75rem 1.5rem;
+  padding: 20px 36px;
   border-radius: 109px;
-  font-size: 1.25rem;
+  font-size: 32px;
   text-decoration: none;
   transition: background-color 0.3s, transform 0.2s;
   margin-bottom: 0.625rem;
@@ -150,7 +150,6 @@
   }
 
   .hero-banner__button {
-    /* margin-top: 16px; */
     font-size: 18px;
     padding: 16px 36px;
     width: auto;

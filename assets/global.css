@@ -35,7 +35,7 @@
 
 html,
 body {
-  font-size: 62.5%;
+  font-size: 87.5%;
   scroll-behavior: smooth;
   background-color: var(--white);
   color: var(--black);
@@ -76,7 +76,6 @@ h4 {
 }
 
 @media (max-width: 1440px) {
-  
 }
 
 @media (max-width: 768px) {

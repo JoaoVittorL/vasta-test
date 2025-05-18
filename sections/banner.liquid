@@ -39,7 +39,7 @@
         "type": "text",
         "id": "button_text",
         "label": "Texto do botão",
-        "default": "Ver mais"
+        "default": "View More"
       },
       {
         "type": "url",
@@ -64,7 +64,7 @@
         {% render 'stars-rating'
           , rating: section.settings.stars %}
       </div>
-      <h2 class="hero-banner__title">{{ section.settings.title }}</h2>
+      <h1 class="hero-banner__title">{{ section.settings.title }}</h1>
       <p class="hero-banner__description">{{ section.settings.comment }}</p>
 
       <a href="{{ section.settings.button_link }}" class="hero-banner__button">
