@@ -14,7 +14,7 @@
   }
 {% endschema %}
 
-<div class="search-header-container control-container ">
+<div class="search-header-container control-container " id="menu">
   <button class="search-header-hamburger" aria-label="Abrir menu">
     <i class="fas fa-bars" aria-hidden="true"></i>
   </button>
@@ -67,3 +67,47 @@
     </button>
   </div>
 </div>
+
+<div class="full-screen-menu hidden" id="fullscreenMenu">
+  <button class="close-menu" aria-label="Fechar menu">
+    <i class="fas fa-times"></i>
+  </button>
+  <nav class="menu-content">
+    <ul>
+      <li><a href="#banner">Início</a></li>
+      <li><a href="#carousel">Shop By Collection</a></li>
+      <li><a href="#advantages">Shop Smarter</a></li>
+      <li><a href="#popular-products">Best Selling Products</a></li>
+      <li><a href="#product-reviews">Feedbacks</a></li>
+      <li><a href="#suggestions">You May Also Like</a></li>
+      <li><a href="#footer">Informações</a></li>
+    </ul>
+  </nav>
+</div>
+
+<script>
+  const hamburgerButton = document.querySelector('.search-header-hamburger');
+  const fullScreenMenu = document.getElementById('fullscreenMenu');
+  const closeButton = document.querySelector('.close-menu');
+  const menuLinks = document.querySelectorAll('#fullscreenMenu a'); // pega todos os links do menu
+
+  // Abre o menu
+  hamburgerButton.addEventListener('click', () => {
+    fullScreenMenu.classList.remove('hidden');
+    fullScreenMenu.classList.add('visible');
+  });
+
+  // Fecha o menu (botão X)
+  closeButton.addEventListener('click', () => {
+    fullScreenMenu.classList.remove('visible');
+    fullScreenMenu.classList.add('hidden');
+  });
+
+  // Fecha o menu ao clicar em qualquer link
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      fullScreenMenu.classList.remove('visible');
+      fullScreenMenu.classList.add('hidden');
+    });
+  });
+</script>
