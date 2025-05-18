@@ -41,11 +41,11 @@
               "title": "Lorem Ipsum"
             }
           },
-          "product_ah4xFb": {
+          "product_DHMkbg": {
             "type": "product",
             "settings": {
-              "product": "pessoa-5",
-              "title": "Lorem Ipsum"
+              "product": "person-1",
+              "title": "Pessoa 5"
             }
           }
         },
@@ -54,7 +54,7 @@
           "product_AERMCe",
           "product_7mhg6f",
           "product_xj3edq",
-          "product_ah4xFb"
+          "product_DHMkbg"
         ],
         "settings": {
           "number_slider_desktop": 5
@@ -263,6 +263,7 @@
         ],
         "settings": {
           "title": "Real Reviews, Real Experiences",
+          "rating": 0,
           "subtitle": "With 1600+ 5-star reviews",
           "products_per_page": 4
         }
