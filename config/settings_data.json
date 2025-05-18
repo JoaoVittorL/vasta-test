@@ -70,7 +70,9 @@
       },
       "menu": {
         "type": "menu",
-        "settings": {}
+        "settings": {
+          "imagem_banner": "shopify://shop_images/Logo_Dark.png"
+        }
       },
       "navigation": {
         "type": "navigation",
