@@ -92,12 +92,15 @@
   color: var(--black);
   padding: 0.75rem 1.5rem;
   border-radius: 30px;
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 12px;
   cursor: pointer;
   transition: background 0.3s;
 }
 
+.coupon-button-search i {
+  font-size: 12px;
+}
 .fa-shopping-cart {
   font-size: 30px;
 }
@@ -108,6 +111,10 @@
     justify-content: space-between;
     align-items: center;
     padding-block: 16px;
+  }
+
+  .email-input-search {
+    font-size: 12px;
   }
 
   .fa-bars,

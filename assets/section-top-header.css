@@ -25,6 +25,10 @@
     font-size: 14px;
   }
 
+  .header-content-title {
+    font-size: 14px;
+  }
+
   .contact-text {
     display: none;
   }
@@ -37,6 +41,10 @@
 
   .header-content-item i,
   .header-content-item a {
+    font-size: 12px;
+  }
+
+  .header-content-title {
     font-size: 12px;
   }
 }
