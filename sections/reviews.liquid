@@ -1,4 +1,3 @@
-{% assign featured_collection = collections['all-products'] %}
 {{ 'section-reviews.css' | asset_url | stylesheet_tag }}
 
 {% schema %}
@@ -60,7 +59,12 @@
             "id": "state",
             "label": "Localização",
             "default": "United States"
-          }
+          },
+            {
+            "type": "image_picker",
+            "id": "image_product_buy",
+            "label": "Imagem do produto"
+          },
         ]
       }
     ],
@@ -97,11 +101,10 @@
             , description: block.settings.description
             , rating: block.settings.rating
             , image: block.settings.image
-            , product_image: block.settings.image
+            , product_image: block.settings.image_product_buy
           %}
         {% endif %}
       {% endfor %}
     </div>
-    <p>Nenhum review disponível ou coleção 'all-products' está vazia.</p>
   {% endif %}
 </div>
