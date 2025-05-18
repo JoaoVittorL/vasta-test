@@ -109,6 +109,7 @@
       "favorite-product": {
         "type": "favorite-product",
         "settings": {
+          "banner_image_1": "shopify://shop_images/9f1c223547d70f6569373dfac9da30aa8515f842_1.png",
           "title": "Cherished Favorites",
           "comment": "Explore the harmony of exceptional Quality and Customer Praise",
           "button_text": "View More",
