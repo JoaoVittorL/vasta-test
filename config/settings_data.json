@@ -142,6 +142,50 @@
       },
       "popular-products": {
         "type": "popular-products",
+        "blocks": {
+          "product_HgX6mF": {
+            "type": "product",
+            "settings": {
+              "product_name": "Product Name",
+              "rating": 5,
+              "review_count": "1000",
+              "product_image": "shopify://shop_images/2f2bd4c5983d32c846ac99d58efa7d62bdb8df4f.png"
+            }
+          },
+          "product_HTgbj8": {
+            "type": "product",
+            "settings": {
+              "product_name": "Product Name",
+              "rating": 5,
+              "review_count": "800",
+              "product_image": "shopify://shop_images/e300c61dbd66555da80a90b0fc71af6a5853049f.png"
+            }
+          },
+          "product_V7chrc": {
+            "type": "product",
+            "settings": {
+              "product_name": "Product Name",
+              "rating": 5,
+              "review_count": "800",
+              "product_image": "shopify://shop_images/0abe8c917df2948fe66be42441503c6a5f3678a2.png"
+            }
+          },
+          "product_xtaQyT": {
+            "type": "product",
+            "settings": {
+              "product_name": "Product Name",
+              "rating": 5,
+              "review_count": "800",
+              "product_image": "shopify://shop_images/28cb6a92326a5df7bbb73b1edc0116160a208d3e.png"
+            }
+          }
+        },
+        "block_order": [
+          "product_HgX6mF",
+          "product_HTgbj8",
+          "product_V7chrc",
+          "product_xtaQyT"
+        ],
         "settings": {
           "title": "Produtos Mais Vendidos"
         }
