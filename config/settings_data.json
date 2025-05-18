@@ -70,7 +70,9 @@
       },
       "menu": {
         "type": "menu",
-        "settings": {}
+        "settings": {
+          "imagem_banner": "shopify://shop_images/Logo_Dark.png"
+        }
       },
       "navigation": {
         "type": "navigation",
@@ -82,7 +84,7 @@
         "type": "banner",
         "settings": {
           "title": "Lorem ipsum dolor sit amet consectetur",
-          "sub_title": "COM MAIS DE 1600 AVALIAÇÕES 5 ESTRELAS",
+          "sub_title": "With 1600+ 5-star reviews",
           "comment": "Lorem ipsum dolor sit amet consectetur. Elit elementum rhoncus",
           "stars": 5,
           "button_text": "Ver mais",
