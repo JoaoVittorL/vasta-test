@@ -240,13 +240,26 @@
               "image_product_buy": "shopify://shop_images/2f2bd4c5983d32c846ac99d58efa7d62bdb8df4f.png",
               "product_name": "Product Name"
             }
+          },
+          "custom_review_NiKhKa": {
+            "type": "custom_review",
+            "settings": {
+              "title": "Mike L.",
+              "description": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio.",
+              "image": "shopify://shop_images/539e59b520c0d26113d5240e45c640bf063d8bc1.png",
+              "rating": 5,
+              "state": "United States",
+              "image_product_buy": "shopify://shop_images/2f2bd4c5983d32c846ac99d58efa7d62bdb8df4f.png",
+              "product_name": "Product Name"
+            }
           }
         },
         "block_order": [
           "custom_review_YYUKGm",
           "custom_review_Kajefa",
           "custom_review_3naJXU",
-          "custom_review_xCKAz6"
+          "custom_review_xCKAz6",
+          "custom_review_NiKhKa"
         ],
         "settings": {
           "title": "Real Reviews, Real Experiences",
