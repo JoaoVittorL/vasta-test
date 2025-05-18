@@ -109,15 +109,6 @@
       "favorite-product": {
         "type": "favorite-product",
         "blocks": {
-          "product_feedback_favorite_zUPFJY": {
-            "type": "product-feedback-favorite",
-            "settings": {
-              "name": "John",
-              "rating": 5,
-              "comment": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio",
-              "person_image": "shopify://shop_images/5829479656d7a6082a98f87f6514f0bceda7a094_1.jpg"
-            }
-          },
           "product_feedback_favorite_wdKtUB": {
             "type": "product-feedback-favorite",
             "settings": {
@@ -126,11 +117,20 @@
               "comment": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio",
               "person_image": "shopify://shop_images/0253a980873ac68aebe436f0d55d07b08c2901da.jpg"
             }
+          },
+          "product_feedback_favorite_zUPFJY": {
+            "type": "product-feedback-favorite",
+            "settings": {
+              "name": "John",
+              "rating": 5,
+              "comment": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio",
+              "person_image": "shopify://shop_images/5829479656d7a6082a98f87f6514f0bceda7a094_1.jpg"
+            }
           }
         },
         "block_order": [
-          "product_feedback_favorite_zUPFJY",
-          "product_feedback_favorite_wdKtUB"
+          "product_feedback_favorite_wdKtUB",
+          "product_feedback_favorite_zUPFJY"
         ],
         "settings": {
           "banner_image_1": "shopify://shop_images/9f1c223547d70f6569373dfac9da30aa8515f842_1.png",
