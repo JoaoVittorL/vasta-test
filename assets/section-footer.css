@@ -223,7 +223,7 @@
   }
 
   .content-images {
-    justify-content: space-between;
+    justify-content: center;
     gap: 16px;
   }
 
@@ -232,10 +232,10 @@
     height: 114px;
   }
 
-  .footer-content {
+  /* .footer-content {
     padding-inline: 100px;
     padding-block: 46px;
-  }
+  } */
 
   .footer-contact {
     flex-direction: column;
@@ -280,6 +280,9 @@
     margin-inline: auto;
   }
 
+  .content-images {
+    justify-content: space-between;
+  }
   .content-images img {
     width: 72px;
     height: 114px;
@@ -331,7 +334,7 @@
 
   .footer-cards-content img {
     height: 35px;
-    width: 60px;
+    width: 56px;
     object-fit: contain;
   }
 
