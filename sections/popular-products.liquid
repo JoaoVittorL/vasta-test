@@ -54,8 +54,8 @@
 
 {{ 'section-popular-products.css' | asset_url | stylesheet_tag }}
 
-<div class="control-container">
-  <h3>{{ section.settings.title }}</h3>
+<div class="control-container popular-products-container">
+  <h3 class="popular-products-title">{{ section.settings.title }}</h3>
   <div class="list-selling-products">
     {% for block in section.blocks %}
       {% render 'products-card'
