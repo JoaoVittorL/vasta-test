@@ -96,10 +96,14 @@
         "type": "advantages",
         "settings": {
           "title": "Shop Smarter, Shop With Vasta",
-          "description_1": "Lorem ipsum dolor sit",
-          "description_2": "Lorem ipsum dolor sit",
-          "description_3": "Lorem ipsum dolor sit",
-          "description_4": "Lorem ipsum dolor sit"
+          "banner_image_1": "shopify://shop_images/tags_1.png",
+          "description_1": "Lorem ipsum dolor sit amet consectetur. Amet",
+          "banner_image_2": "shopify://shop_images/hand-holding-seeding_1.png",
+          "description_2": "Lorem ipsum dolor sit amet consectetur. Amet",
+          "banner_image_3": "shopify://shop_images/UVP_2_-_Icon_f15268a9-3a42-4cf6-ae30-24a8f4a2df89.png",
+          "description_3": "Lorem ipsum dolor sit amet consectetur. Amet",
+          "banner_image_4": "shopify://shop_images/UVP_1_-_Icon_7aad1260-5d84-4899-8637-17f82b8f93e1.png",
+          "description_4": "Lorem ipsum dolor sit amet consectetur. Amet"
         }
       },
       "favorite-product": {
