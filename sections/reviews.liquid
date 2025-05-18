@@ -94,6 +94,7 @@
   }
 {% endschema %}
 
+
 <div class="control-container reviews-container" id="product-reviews">
   <h3>{{ section.settings.title }}</h3>
 
@@ -103,10 +104,13 @@
       , rating: section.settings.rating %}
   </div>
 
-  {% if section.blocks.size > 0 %}
-    <div class="list-review">
-      {% for block in section.blocks %}
-        {% if block.type == 'custom_review' %}
+  <div class="list-review" id="reviews-list">
+    {% for block in section.blocks %}
+      {% if block.type == 'custom_review' %}
+        <div
+          class="review-item"
+          style="display: none;"
+          data-index="{{ forloop.index0 }}">
           {% render 'reviews-card'
             , title: block.settings.title
             , state: block.settings.state
@@ -114,9 +118,67 @@
             , rating: block.settings.rating
             , image: block.settings.image
             , product_image: block.settings.image_product_buy
-          %}
-        {% endif %}
-      {% endfor %}
+            , product: block.settings.product_name %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% assign total_reviews = section.blocks.size %}
+  {% assign per_page = section.settings.products_per_page | default: 4 %}
+  {% assign total_pages = total_reviews | divided_by: per_page | ceil %}
+
+  {% if total_pages >= 1 %}
+    <div
+      class="pagination-container"
+      id="pagination-controls"
+      style="margin-top:30px;">
+      <button
+        id="prev-page"
+        disabled
+        class="px-3 py-1 mr-2 bg-gray-300 text-black rounded">← Anterior</button>
+      <span id="page-indicator">Página 1 de {{ total_pages }}</span>
+      <button id="next-page" class="px-3 py-1 ml-2 bg-gray-300 text-black rounded">Próximo →</button>
     </div>
   {% endif %}
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const reviews = Array.from(document.querySelectorAll('.review-item'));
+    const perPage = {{ section.settings.products_per_page | default: 2 }};
+    const totalPages = Math.ceil(reviews.length / perPage);
+    let currentPage = 1;
+
+    const prevBtn = document.getElementById('prev-page');
+    const nextBtn = document.getElementById('next-page');
+    const pageIndicator = document.getElementById('page-indicator');
+
+    function showPage(page) {
+      reviews.forEach((el, index) => {
+        el.style.display = (index >= (page - 1) * perPage && index < page * perPage) ? 'block' : 'none';
+      });
+
+      currentPage = page;
+      if (pageIndicator) {
+        pageIndicator.textContent = `Página ${page} de ${totalPages}`;
+      }
+      if (prevBtn) prevBtn.disabled = (page === 1);
+      if (nextBtn) nextBtn.disabled = (page === totalPages);
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        if (currentPage > 1) showPage(currentPage - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        if (currentPage < totalPages) showPage(currentPage + 1);
+      });
+    }
+
+    showPage(currentPage);
+  });
+</script>
