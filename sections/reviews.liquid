@@ -132,51 +132,74 @@
     <div
       class="pagination-container"
       id="pagination-controls"
-      style="margin-top:30px;">
-      <button
-        id="prev-page"
-        disabled
-        class="px-3 py-1 mr-2 bg-gray-300 text-black rounded">← Anterior</button>
-      <span id="page-indicator">Página 1 de {{ total_pages }}</span>
-      <button id="next-page" class="px-3 py-1 ml-2 bg-gray-300 text-black rounded">Próximo →</button>
-    </div>
+      style="margin-top:30px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;"></div>
   {% endif %}
 </div>
+
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const reviews = Array.from(document.querySelectorAll('.review-item'));
-    const perPage = {{ section.settings.products_per_page | default: 2 }};
+    const perPage = {{ section.settings.products_per_page | default: 4 }};
     const totalPages = Math.ceil(reviews.length / perPage);
+    const paginationContainer = document.getElementById('pagination-controls');
     let currentPage = 1;
-
-    const prevBtn = document.getElementById('prev-page');
-    const nextBtn = document.getElementById('next-page');
-    const pageIndicator = document.getElementById('page-indicator');
 
     function showPage(page) {
       reviews.forEach((el, index) => {
         el.style.display = (index >= (page - 1) * perPage && index < page * perPage) ? 'block' : 'none';
       });
-
       currentPage = page;
-      if (pageIndicator) {
-        pageIndicator.textContent = `Página ${page} de ${totalPages}`;
+      renderPagination();
+    }
+
+    function renderPagination() {
+      paginationContainer.innerHTML = '';
+
+      const createPageButton = (text, page, isActive = false, isDisabled = false) => {
+        const btn = document.createElement('button');
+        btn.textContent = text;
+        btn.disabled = isDisabled;
+
+        if (isActive) {
+          btn.classList.add('active-page');
+        }
+
+        btn.addEventListener('click', () => showPage(page));
+        return btn;
+      };
+
+      paginationContainer.appendChild(createPageButton('‹', currentPage - 1, false, currentPage === 1));
+
+      let start = Math.max(1, currentPage - 1);
+      let end = Math.min(totalPages, currentPage + 1);
+
+      if (start > 2) {
+        paginationContainer.appendChild(createPageButton('1', 1));
+        if (start > 3) {
+          const dots = document.createElement('span');
+          dots.textContent = '...';
+          dots.className = 'text-gray-400';
+          paginationContainer.appendChild(dots);
+        }
       }
-      if (prevBtn) prevBtn.disabled = (page === 1);
-      if (nextBtn) nextBtn.disabled = (page === totalPages);
-    }
 
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        if (currentPage > 1) showPage(currentPage - 1);
-      });
-    }
+      for (let i = start; i <= end; i++) {
+        paginationContainer.appendChild(createPageButton(i, i, i === currentPage));
+      }
 
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        if (currentPage < totalPages) showPage(currentPage + 1);
-      });
+      if (end < totalPages - 1) {
+        const dots = document.createElement('span');
+        dots.textContent = '...';
+        dots.className = 'text-gray-400';
+        paginationContainer.appendChild(dots);
+      }
+
+      if (end < totalPages) {
+        paginationContainer.appendChild(createPageButton(totalPages, totalPages));
+      }
+
+      paginationContainer.appendChild(createPageButton('›', currentPage + 1, false, currentPage === totalPages));
     }
 
     showPage(currentPage);

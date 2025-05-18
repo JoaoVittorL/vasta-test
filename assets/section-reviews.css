@@ -19,6 +19,47 @@
   margin-top: 35px;
   flex-wrap: wrap;
 }
+
+#pagination-controls button {
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  margin: 0 4px;
+  color: #888;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.2s ease;
+}
+
+#pagination-controls button:hover:not(:disabled) {
+  color: #000;
+}
+
+#pagination-controls button.active {
+  background-color: #2196f3;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#pagination-controls button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+#pagination-controls span {
+  padding: 8px 10px;
+  font-size: 16px;
+  color: #aaa;
+}
+
+button.active-page {
+  background-color: #0056b3; /* Azul */
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
 @media (max-width: 768px) {
   .list-review {
     gap: 10px;
