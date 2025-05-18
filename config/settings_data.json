@@ -13,18 +13,18 @@
       "carousel": {
         "type": "carousel",
         "blocks": {
-          "product_HWxbR3": {
-            "type": "product",
-            "settings": {
-              "product": "person-1",
-              "title": ""
-            }
-          },
           "product_zy7teD": {
             "type": "product",
             "settings": {
-              "product": "",
-              "title": ""
+              "product": "loren-ipsum",
+              "title": "Lorem Ipsum"
+            }
+          },
+          "product_AERMCe": {
+            "type": "product",
+            "settings": {
+              "product": "pessoa-2",
+              "title": "Lorem Ipsum"
             }
           },
           "product_7mhg6f": {
@@ -50,8 +50,8 @@
           }
         },
         "block_order": [
-          "product_HWxbR3",
           "product_zy7teD",
+          "product_AERMCe",
           "product_7mhg6f",
           "product_xj3edq",
           "product_iKWxJL"
