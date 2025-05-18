@@ -192,10 +192,55 @@
       },
       "reviews": {
         "type": "reviews",
+        "blocks": {
+          "custom_review_YYUKGm": {
+            "type": "custom_review",
+            "settings": {
+              "title": "Produto Exemplo",
+              "description": "Descrição do review.",
+              "image": "shopify://shop_images/d423f44a6b4fe3ff4f21586f26a05d3f8d5a7827_b7dae1a8-b21c-4017-99a0-f4b4db82351b.png",
+              "rating": 5,
+              "state": "United States",
+              "image_product_buy": "shopify://shop_images/2f2bd4c5983d32c846ac99d58efa7d62bdb8df4f.png"
+            }
+          },
+          "custom_review_3naJXU": {
+            "type": "custom_review",
+            "settings": {
+              "title": "Produto Exemplo",
+              "description": "Descrição do review.",
+              "rating": 5,
+              "state": "United States"
+            }
+          },
+          "custom_review_RVPGjT": {
+            "type": "custom_review",
+            "settings": {
+              "title": "Produto Exemplo",
+              "description": "Descrição do review.",
+              "rating": 5,
+              "state": "United States"
+            }
+          },
+          "custom_review_tahc8H": {
+            "type": "custom_review",
+            "settings": {
+              "title": "Produto Exemplo",
+              "description": "Descrição do review.",
+              "rating": 5,
+              "state": "United States"
+            }
+          }
+        },
+        "block_order": [
+          "custom_review_YYUKGm",
+          "custom_review_3naJXU",
+          "custom_review_RVPGjT",
+          "custom_review_tahc8H"
+        ],
         "settings": {
           "title": "Real Reviews, Real Experiences",
           "subtitle": "With 1600+ 5-star reviews",
-          "rating": 0,
           "products_per_page": 4
         }
       },
