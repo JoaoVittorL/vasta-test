@@ -75,6 +75,19 @@
   }
 {% endschema %}
 
+<style>
+  .container-favorite-feedbacks {
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    min-height: 666px;
+    background-image: url({{ section.settings.banner_image_1 | image_url: width: 1600 }});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+</style>
+
 
 <div class="container-favorite-feedbacks" id="favorite">
   <div class="content-favorite-feedbacks">
@@ -92,8 +105,7 @@
           , name: block.settings.name
           , comment: block.settings.comment
           , rating: block.settings.rating
-          , image: block.settings.person_image
-        %}
+          , image: block.settings.person_image %}
       {% endfor %}
     </div>
   </div>
