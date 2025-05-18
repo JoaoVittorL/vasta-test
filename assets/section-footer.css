@@ -84,7 +84,11 @@
   gap: 10px;
   margin-top: 11px;
 }
-
+.footer-content-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 .footer-content-item a {
   color: var(--highlight);
   font-size: 16px;
@@ -177,6 +181,10 @@
     padding: 46px 104px;
   }
 
+  .footer-logo {
+    width: 100%;
+  }
+
   .toggle-arrow {
     display: inline-block;
     background: none;
@@ -198,11 +206,6 @@
     margin-inline: auto;
   }
 
-  .footer-content {
-    padding-inline: 0;
-    padding-block: 0;
-  }
-
   .footer-column ul {
     display: none;
     padding-left: 16px;
@@ -220,6 +223,7 @@
   }
 
   .content-images {
+    justify-content: space-between;
     gap: 16px;
   }
 
@@ -231,10 +235,6 @@
   .footer-content {
     padding-inline: 100px;
     padding-block: 46px;
-  }
-
-  .contact-title-footer {
-    text-align: center;
   }
 
   .footer-contact {
@@ -249,6 +249,18 @@
 
   .footer-column span {
     font-size: 20px;
+  }
+
+  .contact-title-footer,
+  .footer-title-contact {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .fa-location-dot,
+  .fa-phone-alt,
+  .fa-envelope {
+    font-size: 15px;
   }
 }
 
@@ -273,6 +285,9 @@
     height: 114px;
   }
 
+  .email-coupon-container {
+    text-align: center;
+  }
   .email-coupon-label {
     font-size: 13px;
     line-height: 20px;
@@ -318,5 +333,17 @@
     height: 35px;
     width: 60px;
     object-fit: contain;
+  }
+
+  .contact-title-footer,
+  .footer-title-contact {
+    text-align: center;
+    font-size: 14px !important;
+  }
+
+  .fa-location-dot,
+  .fa-phone-alt,
+  .fa-envelope {
+    font-size: 12px;
   }
 }
