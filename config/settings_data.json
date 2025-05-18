@@ -41,11 +41,11 @@
               "title": "Lorem Ipsum"
             }
           },
-          "product_iKWxJL": {
+          "product_ah4xFb": {
             "type": "product",
             "settings": {
-              "product": "",
-              "title": ""
+              "product": "pessoa-5",
+              "title": "Lorem Ipsum"
             }
           }
         },
@@ -54,7 +54,7 @@
           "product_AERMCe",
           "product_7mhg6f",
           "product_xj3edq",
-          "product_iKWxJL"
+          "product_ah4xFb"
         ],
         "settings": {
           "number_slider_desktop": 5
