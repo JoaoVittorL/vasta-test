@@ -201,7 +201,20 @@
               "image": "shopify://shop_images/d423f44a6b4fe3ff4f21586f26a05d3f8d5a7827_b7dae1a8-b21c-4017-99a0-f4b4db82351b.png",
               "rating": 5,
               "state": "United States",
-              "image_product_buy": "shopify://shop_images/2f2bd4c5983d32c846ac99d58efa7d62bdb8df4f.png"
+              "image_product_buy": "shopify://shop_images/2f2bd4c5983d32c846ac99d58efa7d62bdb8df4f.png",
+              "product_name": "Produto"
+            }
+          },
+          "custom_review_Kajefa": {
+            "type": "custom_review",
+            "settings": {
+              "title": "Produto Exemplo",
+              "description": "Descrição do review.",
+              "image": "shopify://shop_images/2c2c642820edddf07f67e75f4b34b78031bff05f.png",
+              "rating": 5,
+              "state": "United States",
+              "image_product_buy": "shopify://shop_images/2f2bd4c5983d32c846ac99d58efa7d62bdb8df4f.png",
+              "product_name": "Product Name"
             }
           },
           "custom_review_3naJXU": {
@@ -209,34 +222,31 @@
             "settings": {
               "title": "Produto Exemplo",
               "description": "Descrição do review.",
+              "image": "shopify://shop_images/d91c1c2d5423aba33cf865558a9b6683fb5623ff.png",
               "rating": 5,
-              "state": "United States"
+              "state": "United States",
+              "image_product_buy": "shopify://shop_images/2f2bd4c5983d32c846ac99d58efa7d62bdb8df4f.png",
+              "product_name": "Product Name"
             }
           },
-          "custom_review_RVPGjT": {
+          "custom_review_xCKAz6": {
             "type": "custom_review",
             "settings": {
               "title": "Produto Exemplo",
               "description": "Descrição do review.",
+              "image": "shopify://shop_images/82cc435a35abb77374fd68e4738cd62afd237565.png",
               "rating": 5,
-              "state": "United States"
-            }
-          },
-          "custom_review_tahc8H": {
-            "type": "custom_review",
-            "settings": {
-              "title": "Produto Exemplo",
-              "description": "Descrição do review.",
-              "rating": 5,
-              "state": "United States"
+              "state": "United States",
+              "image_product_buy": "shopify://shop_images/2f2bd4c5983d32c846ac99d58efa7d62bdb8df4f.png",
+              "product_name": "Product Name"
             }
           }
         },
         "block_order": [
           "custom_review_YYUKGm",
+          "custom_review_Kajefa",
           "custom_review_3naJXU",
-          "custom_review_RVPGjT",
-          "custom_review_tahc8H"
+          "custom_review_xCKAz6"
         ],
         "settings": {
           "title": "Real Reviews, Real Experiences",
