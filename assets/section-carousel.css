@@ -39,6 +39,18 @@
   overflow: hidden;
 }
 
+.card-carousel::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%; /* Ajuste conforme necessário */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
 .card-carousel img {
   width: 100%;
   height: 100%;
