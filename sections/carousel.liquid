@@ -1,7 +1,7 @@
 {{ 'glider.min.css' | asset_url | stylesheet_tag }}
 {{ 'section-carousel.css' | asset_url | stylesheet_tag }}
 
-<div class="container-content">
+<div class="container-control">
   <div class="page-width" id="{{ section.id }}">
     <div class="carousel-wrapper">
       <button class="carousel-btn prev">
@@ -64,7 +64,8 @@
             "type": "product",
             "id": "product",
             "label": "Produto"
-          }, {
+          },
+          {
             "type": "text",
             "id": "title",
             "label": "Título",
