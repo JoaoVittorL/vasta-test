@@ -320,6 +320,52 @@
       },
       "footer": {
         "type": "footer",
+        "blocks": {
+          "card_gfLgWP": {
+            "type": "card",
+            "settings": {
+              "imagem_card": "shopify://shop_images/aa99ac13434acdbd6c91ee030740ab95e7ffe690.png"
+            }
+          },
+          "card_zBkaPQ": {
+            "type": "card",
+            "settings": {
+              "imagem_card": "shopify://shop_images/d6981fd18092bb7628288dc2bd58b7a22593c2e1.png"
+            }
+          },
+          "card_daQDXY": {
+            "type": "card",
+            "settings": {
+              "imagem_card": "shopify://shop_images/030d7554715a76c08702a55b4dcc0db00d26c232.png"
+            }
+          },
+          "card_nn3QVX": {
+            "type": "card",
+            "settings": {
+              "imagem_card": "shopify://shop_images/6857899a1f275d04287a16f74b07dbb859698895.png"
+            }
+          },
+          "card_EfWx36": {
+            "type": "card",
+            "settings": {
+              "imagem_card": "shopify://shop_images/28bcff231f96338fae99a0dbd498f875b26d3000.png"
+            }
+          },
+          "card_product_2_Krt9e9": {
+            "type": "card-product-2",
+            "settings": {
+              "imagem_product": "shopify://shop_images/2353c70e01125b5633ca1bb4cef94dfc10540b51.png"
+            }
+          }
+        },
+        "block_order": [
+          "card_gfLgWP",
+          "card_zBkaPQ",
+          "card_daQDXY",
+          "card_nn3QVX",
+          "card_EfWx36",
+          "card_product_2_Krt9e9"
+        ],
         "settings": {
           "email": "info@brand.com",
           "phone": "+1 (111) 222-3333",
