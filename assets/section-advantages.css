@@ -1,13 +1,13 @@
 .invite-container {
   background-color: var(--background-content-card);
-  padding-block: 60px;
+  padding-block: 68px;
 }
 
 .invite-list {
   display: flex;
-  flex-wrap: wrap;
   gap: 44px;
-  justify-content: center;
+  justify-content: space-between;
+  margin-top: 35px;
 }
 
 .invite-card-content {
@@ -16,7 +16,8 @@
   align-items: center;
   text-align: center;
   border-radius: 8px;
-  padding: 20px;
+  padding-block: 10px;
+  width: 226px;
 }
 
 .invite-card-content img {
@@ -28,33 +29,60 @@
 
 .invite-card-description {
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 100%;
+  font-weight: 400;
+  text-align: center;
   color: var(--black);
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .invite-title {
-  font-size: 36px !important;
+  font-size: 36px;
+}
+
+.divider {
+  width: 1px;
+  background-color: var(--text-muted);
 }
 
 @media (max-width: 768px) {
-  .invite-content {
+  .invite-container {
     padding-block: 45px;
   }
-
+  .invite-list {
+    gap: 15px;
+    margin-top: 24px;
+  }
   .invite-card-content img {
     width: 54px;
     height: 54px;
   }
+  .invite-card-content {
+    width: 156px;
+  }
 
   .invite-card-description {
     font-size: 14px;
+    line-height: 110%;
   }
 }
 
 @media (max-width: 375px) {
-  .invite-content {
-    padding: 12.5px 20px;
+  .invite-container {
+    padding-block: 20px;
+  }
+  .invite-list {
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 18px;
+  }
+
+  .divider-hide-mobile {
+    display: none;
+  }
+
+  .invite-card-content {
+    width: 140px;
   }
 
   .invite-card-content img {

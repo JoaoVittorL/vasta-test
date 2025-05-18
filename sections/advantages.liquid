@@ -80,6 +80,12 @@
           </div>
         {% endif %}
       </div>
+
+      {% unless forloop.last %}
+        <div class="divider {% if i == 2 %}divider-hide-mobile{% endif %}"></div>
+      {% endunless %}
     {% endfor %}
+
+
   </div>
 </div>

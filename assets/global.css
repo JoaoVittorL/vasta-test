@@ -76,12 +76,12 @@ h4 {
 }
 
 @media (max-width: 1440px) {
-}
-
-@media (max-width: 768px) {
   .control-container {
     padding-inline: 20px;
   }
+}
+
+@media (max-width: 768px) {
 }
 
 @media (max-width: 375px) {
